@@ -1,107 +1,5 @@
 #include "cub_3d.h"
 
-void drawDDA(int xA,int yA,int xB,int yB,t_info *game)
-{
-	// yB = yA+3;
-	// xB = xA+3;
-	//find_endline(&xB,&yB,game);
-	// yB *= 3;
-	// xB *= 3;
-	int dx = xB - xA;
-	int dy = yB - yA;
-
-	float step = fmaxf(abs(dx),abs(dy));
-	float xinc = dx/step;
-	float yinc = dy/step;
-
-	float x = xA,y = yA;
-
-	while (step >= 0)
-	{
-		///if(game->map[(int)x / 15][(int)y /15] == '1')
-			//break;
-		mlx_pixel_put(game->ml,game->window,round(x),round(y),0x000000);
-		// printf("%c\n", game->map[(int)x / 15][(int)y /15]);
-		x += xinc;
-		y += yinc;
-		// if(game->map[(int)y][(int)x] == '1')
-		// 	break ;
-		step--;
-	}
-}
-float normaliseangle(float angle)
-{
-    angle = remainder(angle ,(2*PI));
-    if(angle < 0)
-    {
-        angle = (2*PI) + angle;
-    }
-    return (angle);
-}
-void cast_ray(float rayangel,int i,t_info *m)
-{
-   // m->rays[i].rayAngle = rayangel;
-   (void)i;
-    rayangel = normaliseangle(rayangel);
-    int wallhitx;
-    int wallhity;
-    int rayisup;
-    int rayisdown;
-    int rayisleft;
-    int rayisright;
-    float distance;
-    long ystep;
-    long xstep; 
-    long yintercept;
-    long xintercept;
-    long rx;
-    long ry;
-	int g = 16;
-    wallhitx = 0;
-    wallhity =0;
-    distance = 0;
-    rayisdown = rayangel  > 0 && rayangel < PI;
-    rayisup = !rayisdown;
-    rayisright = rayangel < 0.5 * PI || rayangel > 1.5 * PI;
-    rayisleft = !rayisright;
-    //drawDDA(m->pplayer->x10,m->pplayer->y10,m->pplayer->x10+cos(rayangel)30,m->pplayer->y10+sin(rayangel)30,m);
-    ////////////////////////////////////////////
-    //////HORIZONTAL RAY !//////////////////////
-    ////////////////////////////////////////////
-
-     yintercept = floor(m->py/15 )* 15;
-     yintercept += rayisdown ? 15 : 0;
-
-     xintercept = m->px + ( yintercept - m->py)/tan(rayangel);
-
-     /////////////////////////////////////////
-    ystep = 15;
-    ystep = rayisup ? -1 : 1;
-
-    xstep = 15/tan(rayangel);
-    xstep*= (rayisleft && xstep > 0) ? -1 : 1;
-    xstep *= (rayisright && xstep < 0) ? -1 : 1;
-    rx = xintercept;
-    ry = yintercept;
-    if(rayisup)
-        ry--;
-    while(g--)
-    {
-		printf ("%ld, %ld\n", ry, rx);
-       if(m->map[(int)(ry / 15)][(int)(rx / 15)] == '1')
-       {
-           puts("wall");
-           // mlx_pixel_put(m->mlx, m->mlx_win, rx10, ry10, 0xff0000);
-           break;
-       }
-       else
-       {
-            rx += xstep;
-            ry += ystep;
-       }
-    }
-    drawDDA(m->px,m->py,rx,ry,m);
-}
 void raydraw(int xA,int yA,int xB,int yB,t_info *game)
 {
 	// yB = yA+3;
@@ -135,6 +33,7 @@ void raydraw(int xA,int yA,int xB,int yB,t_info *game)
 	}
 	// drawDDA(xA, yA,z (int)x, (int)y, game);
 }
+
 char	*cpy(char *dest, char *src)
 {
 	int		i;
@@ -224,87 +123,17 @@ void	my_mlx_pixel_put(t_img *data, int i, int color)
 	}
 }
 
-// void rander_line(int x0, int y0, int x1, int y1, t_info *info)  
-// {  
-
-//     int dx;  
-//     int dy;  
-//     int p;  
-//     int x;  
-//     int y;
-
-//     dx=x1-x0;  
-//     dy=y1-y0;  
-//     x=x0;  
-//     y=y0;  
-//     p=2*dy-dx;
-// 	printf ("x->%d--x1->%d\n", x, x1);
-//     while(x!=x1)  
-//     {  
-//      if(p>=0)  
-//         {  
-// 			mlx_pixel_put(info->ml, info->window, x, y,0x000000);
-//             y=y+1;  
-//             p=p+2*dy-2*dx;  
-//         }  
-//         else  
-//         {  
-// 			mlx_pixel_put(info->ml, info->window, x, y,0x000000);
-//             p=p+2*dy;
-// 		}  
-//         x=x+1;  
-//     }
-// }
-
-void	rander_line(int x, int y, int nx, int ny, t_info *info)
-{
-	int	f;
-	int	fi;
-
-	f = 0;
-	fi = 2 * (ny - y);
-	x = x + 1 - 1;
-	// while (x != nx)
-	// {
-	// 	mlx_pixel_put(info->ml, info->window, x, y,0x000000);
-	// 	f = f + fi;
-	// 	if (f >= 0)
-	// 	{
-	// 		y++;
-	// 		f = f - 2 * (nx - x);
-	// 	}
-	// 	if (x < nx)
-	// 		x++;
-	// 	else if (x > nx)
-	// 		x--;
-	// }
-	// mlx_pixel_put(info->ml, info->window, nx, ny,0xff3300);
-	raydraw(info->px, info->py, nx, ny, info);
-}
-
 void	rander_view(t_info *info)
 {
-	// info->px, info->py, info->px +, info->py + sin(info->pa) * 100, info
-	// int	nx;
-	// int	yx;
 	double	npa;
 	int		i;
 
-	i = 320;
+	i = 120;
 	npa = info->pa - (FOV / 2);
-	// if (npa < 0)
-	// 	npa = npa + (2 * PI);
-	// else if (npa > 2 * PI)
-	// 	npa = npa - (2 * PI);
-	// nx = cos(info->pa) * 100
 	while (i--)
 	{
-		// printf ("%d\n", i);
-		raydraw(info->px, info->py, info->px + cos(npa) * 100, info->py + sin(npa) * 100, info);
-		// cast_ray(npa,i,info);
-		npa += FOV/320;
-		// npa += 0.01;
-		printf ("%f\n", npa);
+		raydraw(info->px, info->py, info->px + cos(npa) * ((12 * 15) + (8 * 15)), info->py + sin(npa) * ((12 * 15) + (8 * 15)), info);
+		npa += FOV/120;
 	}
 }
 int	draw(void *stru)
@@ -328,7 +157,6 @@ int	draw(void *stru)
 		}
 	}
 	mlx_put_image_to_window(info->ml, info->window, info->img3.img, info->px - 2, info->py - 2);
-	// rander_line(info->px, info->py, info->px +cos(info->pa) * 100, info->py + sin(info->pa) * 100, info);
 	rander_view(info);
 	return (0);
 }
@@ -336,7 +164,6 @@ int	draw(void *stru)
 int	get_map_info(t_info *info, char *map)
 {
 	int		i;
-	// int		j;
 	char	**splited;
 
 	i = -1;
@@ -380,37 +207,72 @@ void	get_player_position(t_info *info)
 	}
 }
 
+void	player_next_position(t_info *info, int i)
+{
+	int	x;
+	int	y;
+
+	if (i == 1)
+	{
+		x = round(info->px + (cos(info->pa)) * 3);
+		y = round(info->py + (sin(info->pa)) * 3);
+		if(info->map[(int)floor(y / 15)][(int)floor(x / 15)] != '1')
+		{
+			info->px = x;
+			info->py = y;
+		}
+	}
+	if (i == 2)
+	{
+		x = round(info->px + cos(info->pa) * -3);
+		y = round(info->py + sin(info->pa) * -3);
+		if(info->map[(int)floor(y / 15)][(int)floor(x / 15)] != '1')
+		{
+			info->px = x;
+			info->py = y;
+		}
+	}
+	if (i == 3)
+	{
+		x = round(info->px + sin(info->pa) * 3);
+		y = round(info->py - cos(info->pa) * 3);
+		if(info->map[(int)floor(y / 15)][(int)floor(x / 15)] != '1')
+		{
+			info->px = x;
+			info->py = y;
+		}
+	}
+	if (i == 4)
+	{
+		x = round(info->px - sin(info->pa) * 3);
+		y = round(info->py + cos(info->pa) * 3);
+		if(info->map[(int)floor(y / 15)][(int)floor(x / 15)] != '1')
+		{
+			info->px = x;
+			info->py = y;
+		}
+	}
+}
+
 void	update_player_cord(t_info *info)
 {
 	if (info->up.k_w)
-	{
-		info->px = round(info->px + (cos(info->pa)) * 3);
-		info->py = round(info->py + (sin(info->pa)) * 3);
-	}
+		player_next_position(info, 1);
 	if (info->up.k_s)
-	{
-		info->px = round(info->px + cos(info->pa) * -3);
-		info->py = round(info->py + sin(info->pa) * -3);
-	}
+		player_next_position(info, 2);
 	if (info->up.k_a)
-	{
-		info->px = round(info->px + sin(info->pa) * 3);
-		info->py = round(info->py - cos(info->pa) * 3);
-	}
+		player_next_position(info, 3);
 	if (info->up.k_d)
-	{
-		info->px = round(info->px - sin(info->pa) * 3);
-		info->py = round(info->py + cos(info->pa) * 3);
-	}
+		player_next_position(info, 4);
 	if (info->up.k_right)
 	{
-		info->pa = info->pa + (3 * (PI / 220));
+		info->pa = info->pa + (5 * (PI / 150));
 		if (info->pa > PI * 2)
 			info->pa = info->pa - (2 * PI);
 	}
 	if (info->up.k_left)
 	{
-		info->pa = info->pa - 0.1;
+		info->pa = info->pa - (5 * (PI / 150));
 		if (info->pa < 0)
 			info->pa = info->pa + (2 * PI);
 	}

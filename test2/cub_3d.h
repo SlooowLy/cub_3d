@@ -19,6 +19,12 @@
 # define FOV 60 * (PI / 180)
 // # include "./libft/libft.h"
 
+typedef struct s_calculations
+{
+	int	f_x;
+	int	f_y;
+}	t_calculations;
+
 typedef struct	s_img
 {
 	void	*img;
