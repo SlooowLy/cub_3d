@@ -2,7 +2,7 @@ NAME = cub3d
 
 CFLAGS = -Wall -Wextra -Werror -Imlx
 
-SRC = main.c get_map.c ft_split.c ft_strlen.c\
+SRC = main.c get_map.c ft_split.c ft_strlen.c bresenham.c\
 
 OBJ = $(SRC:.c=.o)
 
