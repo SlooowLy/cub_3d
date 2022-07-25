@@ -297,7 +297,7 @@ void rays(t_info *m)
 		cast_ray(ra,i,m);
 		// puts ("koooo");
 		// printf("x >> %d y >> %d\n", m->rays[i].w_x, m->rays[i].w_y);
-		// drawDDA(m->px,m->py,m->rays[i].w_x,m->rays[i].w_y,m);
+		// drawDDA(m->px,m->py,m->rays[i].w_x,m->rays[i].w_y,m)
 		i++;
 		ra += FOV/320;
 	}
