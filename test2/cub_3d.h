@@ -19,6 +19,8 @@
 # define FOV 60 * (PI / 180)
 # define TRUE 1
 # define FALSE 0
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 // # include "./libft/libft.h"
 
 ///////////////////////
@@ -36,7 +38,9 @@ typedef struct s_calculations
 {
 	int	w_x;
 	int	w_y;
-	double	distance;
+	float	rayAngle;
+	int		washitvertical;
+	float	distance;
 }	t_calculations;
 
 typedef struct	s_img
@@ -73,8 +77,10 @@ typedef struct s_info
 	t_calculations	rays[490];
 	t_update	up;
 	float		pa;
-	int			px;
-	int			py;
+	float			px;
+	float		py;
+	t_img		img_u;
+	t_img		img_d;
 	t_img		img1;
 	t_img		img2;
 	t_img		img3;
