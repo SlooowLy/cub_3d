@@ -4,7 +4,7 @@ LIBFT = ./libft/libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = main.c parsing.c read_map.c
+SRCS = main.c parsing.c read_map.c parsing_utils.c
 
 OBJS = $(SRCS:.c=.o)
 

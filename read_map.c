@@ -27,7 +27,7 @@ char **split_map(char *str)
 	int		x;
 	int		y ;
 	char	**splited;
-
+  
 	i = 0;
 	splited = (char **)malloc(map_len(str) * sizeof(char **) + 2);
 	if (!splited)
@@ -52,8 +52,6 @@ char	**read_map(int fd)
 	char	*buff;
 	char	*file;
 
-	if (read(fd, 0, 0) == -1)
-		
 	buff = malloc(2);
 	file = malloc(1);
 	if (!buff || !file)

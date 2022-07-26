@@ -2,5 +2,5 @@
 
 int main()
 {
-    parsing("./Makefile");
+    parsing("file");
 }
