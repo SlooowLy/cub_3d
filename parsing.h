@@ -3,7 +3,7 @@
 
 # include <stdio.h>
 # include <unistd.h>
-#include <string.h>
+# include <string.h>
 # include <fcntl.h>
 #include <errno.h>
 # include "./libft/libft.h"
@@ -17,11 +17,12 @@ typedef struct
 	unsigned long	f_hexa;
 	unsigned long	c_hexa;
 	char			**map;
-};
+} data;
 
 
 char	**read_map(int fd);
-void    parsing(char *map);
+void	parsing(char *map);
 void	print_error(int error);
+int		is_map(char *str);
 
 #endif

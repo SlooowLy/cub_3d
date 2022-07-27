@@ -1,6 +1,8 @@
 #include "parsing.h"
 
-int main()
+int main(int ac, char **av)
 {
-    parsing("file");
+    if (ac != 2)
+        return 1;
+    parsing(av[1]);
 }
