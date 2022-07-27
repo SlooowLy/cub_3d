@@ -6,7 +6,7 @@ SRC = main.c get_map.c ft_split.c ft_strlen.c bresenham.c\
 
 OBJ = $(SRC:.c=.o)
 
-%.o: %.c
+%.o: %.c cub_3d.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)

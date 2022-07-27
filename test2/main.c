@@ -14,8 +14,8 @@ int	lines(char **map)
 
 int		is_end_window(t_info *m, double x, double y)
 {
-	if (x < 0 || x >= (16 * 64) ||
-		y < 0 || y >= lines(m->map) * 16)
+	if (x < 0 || x >= (WALL_SIZE * WALL_SIZE) ||
+		y < 0 || y >= lines(m->map) * WALL_SIZE)
 		return (TRUE);
 	return (FALSE);
 }
@@ -25,8 +25,8 @@ int		is_wall(t_info *m, int x, int y, char identf)
 	int	grid_x;
 	int	grid_y;
 
-	grid_x = (int)floor(x / 16);
-	grid_y = (int)floor(y / 16);
+	grid_x = (int)floor(x / WALL_SIZE);
+	grid_y = (int)floor(y / WALL_SIZE);
 	if (is_end_window(m, x, y))
 	{
 		return (TRUE);
@@ -61,35 +61,7 @@ int			ray_facing(float angle, int way)
 		return (right);
 	return (-1);
 }
-void DrawCircle(int x, int y, int r,t_info *m)
-{
-      //static const float PI = 3.1415926535;
-      float i, angle, x1, y1;
 
-      for(i = 0; i < 360; i += 0.1)
-      {
-            angle = i;
-            x1 = r * cos(angle * PI / 180);
-            y1 = r * sin(angle * PI / 180);
-            mlx_pixel_put(m->ml,m->window,x + x1, y + y1, 0xff3300);
-      }
-}
-void draw_square(t_info *game)
-{
-     int    i = 0;
-     int    j = 0;
- 
-    while(i < 4)
-    {
-        j = 0;
-        while(j < 4)
-        {
-            mlx_pixel_put(game->ml, game->window, game->px*16 + i, game->py*16+j, 0xff0000);
-            j++;
-        }
-        i++;
-    }
-}
 void drawDDA(int xA,int yA,int xB,int yB,t_info *game)
 {
 
@@ -166,15 +138,15 @@ void cast_ray(float rayangel,int i,t_info *m)
 	//////HORIZONTAL RAY !//////////////////////
 	////////////////////////////////////////////
 	
-	yintercept = floor(m->py/16) * 16;
+	yintercept = floor(m->py/WALL_SIZE) * WALL_SIZE;
 	if(rayisdown)
-		yintercept += 16;
+		yintercept += WALL_SIZE;
 	xintercept =  m->px + (yintercept - m->py) / tan(rayangel);
 	 /////////////////////////////////////////
-	ystep = 16;
+	ystep = WALL_SIZE;
 	if(rayisup)
 		ystep *= -1;
-	xstep = 16/tan(rayangel);
+	xstep = WALL_SIZE/tan(rayangel);
 	if(rayisleft && xstep > 0)
 		xstep *= -1;
 	if(rayisright && xstep < 0)
@@ -213,16 +185,16 @@ void cast_ray(float rayangel,int i,t_info *m)
 	findvir_wall = FALSE;
 
 	
-	xintercept = floor(m->px/16) * 16;
+	xintercept = floor(m->px/WALL_SIZE) * WALL_SIZE;
 	if(rayisright)
-		xintercept += 16;
+		xintercept += WALL_SIZE;
 		
 	yintercept =  m->py + (xintercept - m->px) * tan(rayangel);
 	 /////////////////////////////////////////
-	xstep = 16;
+	xstep = WALL_SIZE;
 	if(rayisleft)
 		xstep *= -1;
-	ystep = 16*tan(rayangel);
+	ystep = WALL_SIZE*tan(rayangel);
 	if(rayisup && ystep > 0)
 		ystep *= -1;
 	if(rayisdown && ystep < 0)
@@ -294,15 +266,14 @@ void rays(t_info *m)
 	while(i < 320)
 	{
 		// puts ("yoooo");
-		cast_ray(ra,i,m);
+		cast_ray(ra, i, m);
 		// puts ("koooo");
 		// printf("x >> %d y >> %d\n", m->rays[i].w_x, m->rays[i].w_y);
-		// drawDDA(m->px,m->py,m->rays[i].w_x,m->rays[i].w_y,m)
+		// drawDDA(m->px,m->py,m->rays[i].w_x,m->rays[i].w_y,m);
 		i++;
 		ra += FOV/320;
 	}
 }
-
 
 
 /////////////////////////////////
@@ -408,10 +379,10 @@ void	my_mlx_pixel_put(t_img *data, int i, int color)
 	}
 	else if (i == 2)
 	{
-		while (y != 16)
+		while (y != WALL_SIZE)
 		{
 			x = 0;
-			while (x != 16)
+			while (x != WALL_SIZE)
 			{
 				dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 				x++;
@@ -457,55 +428,43 @@ void	rander_view(t_info *info)
 	// printf ("distance >> %f\n", info->rays[0].distance);
 }
 
-void	put_wall(t_info *m, int wall_h, int i, unsigned int c)
+
+void	put_wall(t_info *m, float wall_height, int i, unsigned int c)
 {
 	t_img	img;
 	char	*dst;
 	int		y;
 	int		x;
+	int		ix;
+	int		iy;
+	int		wall_h;
+	// int		u;
+
+	wall_h = (int)fabs((wall_height * 16));
+	c = c+1;
 	img.img = mlx_new_image(m->ml, 3, wall_h);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	y = 0;
+	if (!m->rays[i / 3].washitvertical)
+		ix = (int)floor((m->rays[i / 3].w_x) % WALL_SIZE);
+	else
+		ix = (int)floor((m->rays[i / 3].w_y) % WALL_SIZE);
 	while (y != wall_h)
 	{
+		iy = (y) * ((WALL_SIZE / (float)wall_h));
 		x = 0;
 		while (x != 3)
 		{
 			dst = img.addr + (y * img.line_length + x * (img.bits_per_pixel / 8));
-			*(unsigned int*)dst = c;
+			*(unsigned int*)dst = m->buff[(WALL_SIZE *iy) + ix];
 			x++;
 		}
 		y++;
 	}
-	mlx_put_image_to_window(m->ml, m->window, img.img, i, (500 / 2) - (wall_h / 2));
+	mlx_put_image_to_window(m->ml, m->window, img.img, i, (480 / 2) - (wall_h / 2));
 	mlx_destroy_image(m->ml, img.img);
 }
 
-// void	put_wall(t_info *info, int wall_h, int i)
-// {
-// 	t_img	img;
-// 	char	*dst;
-// 	int		y;
-// 	int		x;
-
-// 	(void) info;
-// 	img.img = mlx_new_image(info->ml, 3, wall_h);
-// 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-// 	y = 0;
-// 	while (y != wall_h)
-// 	{
-// 		x = 0;
-// 		while (x != 3)
-// 		{
-// 			dst = img.addr + (y * img.line_length + x * (img.bits_per_pixel / 8));
-// 			*(unsigned int*)dst = 0xffffff;
-// 			x++;
-// 		}
-// 		y++;
-// 	}
-// 	mlx_put_image_to_window(info->ml, info->window, img.img, i, (480 / 2) - (wall_h / 2));
-// 	mlx_destroy_image(info->ml, img.img);
-// }
 
 void	rander_walls(t_info *info)
 {
@@ -513,11 +472,12 @@ void	rander_walls(t_info *info)
 	float	projection_distance;
 	float	wall_height;
 	unsigned int	color;
+	float	dis;
 
 	// c = 0x03bafc;
 	// d = 0x0FFFF00;
 
-	projection_distance = (480 / 2) / tan(60 / 2);
+	projection_distance = (852 / 2) / tan(60 / 2);
 	while (i < 320)
 	{
 		if ((int)info->rays[i].distance)
@@ -526,10 +486,10 @@ void	rander_walls(t_info *info)
 				color = 0x0C0C0C0;
 			else
 				color = 0x0808080;
-			wall_height = (16 / info->rays[i].distance) * projection_distance;
-			// printf ("%d distance >>>>>> %f\n", i, info->rays[i].distance);
-			// printf ("hieght >>>>>>>> %f\n", wall_height);
-			put_wall(info, (int)fabs((wall_height * 10)), i * 3, color);
+			dis = info->rays[i].distance * cos(info->rays[i].rayAngle - info->pa);
+			wall_height = (WALL_SIZE / dis)  * projection_distance;
+			// if (info->rays[i].w_x <= 32 && info->rays[i].w_y <= 32)
+			put_wall(info, wall_height, i * 3, color);
 		}
 		i++;
 	}
@@ -555,6 +515,25 @@ void projectewall3d(t_info *m)
 	}
 }
 
+void	printf_photo(t_info *info)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	i = -1;
+	k = 0;
+	while (++i != 64)
+	{
+		j = -1;
+		while (++j != 64)
+		{
+			mlx_pixel_put(info->ml, info->window, j, i, info->buff[k]);
+			k++;
+		}
+	}
+}
+
 int	draw(void *stru)
 {
 	t_info	*info;
@@ -566,6 +545,7 @@ int	draw(void *stru)
 	info = stru;
 	mlx_clear_window(info->ml, info->window);
 	update_player_cord(info);
+	// printf_photo(info);
 	mlx_put_image_to_window(info->ml, info->window, info->img_u.img, 0, 0);
 	mlx_put_image_to_window(info->ml, info->window, info->img_d.img, 0, 240);
 	// while (info->map[++i])
@@ -574,9 +554,9 @@ int	draw(void *stru)
 	// 	while (info->map[i][++j])
 	// 	{
 	// 		if (info->map[i][j] == '0' || info->map[i][j] == 'N')
-	// 			mlx_put_image_to_window(info->ml, info->window, info->img1.img, j * 16, i * 16);
+	// 			mlx_put_image_to_window(info->ml, info->window, info->img1.img, j * WALL_SIZE, i * WALL_SIZE);
 	// 		else if (info->map[i][j] == '1')
-	// 			mlx_put_image_to_window(info->ml, info->window, info->img2.img, j * 16, i * 16);
+	// 			mlx_put_image_to_window(info->ml, info->window, info->img2.img, j * WALL_SIZE, i * WALL_SIZE);
 	// 	}
 	// }
 	rays(info);
@@ -601,8 +581,8 @@ void	creat_imgs(t_info *info)
 {
 	info->img_u.img = mlx_new_image(info->ml, 856, 240);
 	info->img_d.img = mlx_new_image(info->ml, 856, 240);
-	info->img1.img = mlx_new_image(info->ml, 16, 16);
-	info->img2.img = mlx_new_image(info->ml, 16, 16);
+	info->img1.img = mlx_new_image(info->ml, WALL_SIZE, WALL_SIZE);
+	info->img2.img = mlx_new_image(info->ml, WALL_SIZE, WALL_SIZE);
 	info->img3.img = mlx_new_image(info->ml, 1, 1);
 	info->img_d.addr = mlx_get_data_addr(info->img_d.img, &info->img_d.bits_per_pixel, &info->img_d.line_length, &info->img_d.endian);
 	info->img_u.addr = mlx_get_data_addr(info->img_u.img, &info->img_u.bits_per_pixel, &info->img_u.line_length, &info->img_u.endian);
@@ -629,8 +609,8 @@ void	get_player_position(t_info *info)
 		{
 			if (info->map[i][j] == 'N')
 			{
-				info->px = j * 16;
-				info->py = i * 16;
+				info->px = j * WALL_SIZE;
+				info->py = i * WALL_SIZE;
 				return ;
 			}
 		}
@@ -646,7 +626,9 @@ void	player_next_position(t_info *info, int i)
 	{
 		x = round(info->px + (cos(info->pa)));
 		y = round(info->py + (sin(info->pa)));
-		if(info->map[(int)floor(y / 16)][(int)floor(x / 16)] != '1')
+		if(info->map[(int)floor(y / WALL_SIZE)][(int)floor(x / WALL_SIZE)] != '1' &&
+			info->map[(int)floor((y + 2) / WALL_SIZE)][(int)floor((x + 2) / WALL_SIZE)] != '1' && 
+			info->map[(int)floor((y - 2) / WALL_SIZE)][(int)floor((x - 2) / WALL_SIZE)] != '1')
 		{
 			info->px = x;
 			info->py = y;
@@ -656,8 +638,9 @@ void	player_next_position(t_info *info, int i)
 	{
 		x = round(info->px + cos(info->pa) * -3);
 		y = round(info->py + sin(info->pa) * -3);
-		if(info->map[(int)floor(y / 16)][(int)floor(x / 16)] != '1')
-		{
+		if(info->map[(int)floor(y / WALL_SIZE)][(int)floor(x / WALL_SIZE)] != '1' &&
+			info->map[(int)floor((y + 2) / WALL_SIZE)][(int)floor((x + 2) / WALL_SIZE)] != '1' && 
+			info->map[(int)floor((y - 2) / WALL_SIZE)][(int)floor((x - 2) / WALL_SIZE)] != '1')		{
 			info->px = x;
 			info->py = y;
 		}
@@ -666,8 +649,9 @@ void	player_next_position(t_info *info, int i)
 	{
 		x = round(info->px + sin(info->pa) * 3);
 		y = round(info->py - cos(info->pa) * 3);
-		if(info->map[(int)floor(y / 16)][(int)floor(x / 16)] != '1')
-		{
+		if(info->map[(int)floor(y / WALL_SIZE)][(int)floor(x / WALL_SIZE)] != '1' &&
+			info->map[(int)floor((y + 2) / WALL_SIZE)][(int)floor((x + 2) / WALL_SIZE)] != '1' && 
+			info->map[(int)floor((y - 2) / WALL_SIZE)][(int)floor((x - 2) / WALL_SIZE)] != '1')		{
 			info->px = x;
 			info->py = y;
 		}
@@ -676,7 +660,9 @@ void	player_next_position(t_info *info, int i)
 	{
 		x = round(info->px - sin(info->pa) * 3);
 		y = round(info->py + cos(info->pa) * 3);
-		if(info->map[(int)floor(y / 16)][(int)floor(x / 16)] != '1')
+		if(info->map[(int)floor(y / WALL_SIZE)][(int)floor(x / WALL_SIZE)] != '1' &&
+			info->map[(int)floor((y + 2) / WALL_SIZE)][(int)floor((x + 2) / WALL_SIZE)] != '1' && 
+			info->map[(int)floor((y - 2) / WALL_SIZE)][(int)floor((x - 2) / WALL_SIZE)] != '1')
 		{
 			info->px = x;
 			info->py = y;
@@ -744,9 +730,69 @@ int	key_release(int key, t_info *info)
 	return (0);
 }
 
+void	get_window_info(t_info *info)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	k = 0;
+	i = -1;
+	while (info->map[++i])
+	{
+		j = 0;
+		while (info->map[i][j])
+			j++;
+		if (j > k)
+			k = j;
+	}
+	info->map_h = i;
+	info->map_w = k;
+	info->window_h = i * WALL_SIZE;
+	info->window_w = k * WALL_SIZE;
+}
+
+unsigned int	get_color(t_img img, int x, int y)
+{
+	char	*ptr;
+	int		pixel;
+
+	pixel = y * img.line_length + x * 4;
+	ptr = img.addr + pixel;
+	return ((((unsigned char)ptr[2]) << 16) + (((unsigned char)ptr[1]) << 8) + ((unsigned char)ptr[0]));
+}
+
+void	get_texture_buff(t_info *info)
+{
+	int		img_width;
+	int		img_height;
+	int	i = -1;
+	int	j;
+	int	k = 0;
+	t_img	img1;
+
+	img1.img = mlx_xpm_file_to_image(info->ml, PATH, &img_width, &img_height);
+	img1.addr = mlx_get_data_addr(img1.img, &img1.bits_per_pixel, &img1.line_length, &img1.endian);
+	int *buff;
+	buff = malloc(4 * img_height * img_width);
+	while (++i < img_height)
+	{
+		j = 0;
+		while (j < img_width)
+		{
+			buff[k] = get_color(img1, j, i);
+			j++;
+			k++;
+		}
+	}
+	info->buff = buff;
+}
+
 void	ft_creat_window(t_info *info)
 {
 	info->ml = mlx_init();
+	get_texture_buff(info);
+	get_window_info(info);
 	info->window = mlx_new_window(info->ml, 852, 480, "CUB_3D");
 	creat_imgs(info);
 	get_player_position(info);

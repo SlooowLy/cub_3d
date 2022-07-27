@@ -21,6 +21,9 @@
 # define FALSE 0
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
+# define PATH "./greystone.xpm"
+# define WALL_SIZE 64
+
 // # include "./libft/libft.h"
 
 ///////////////////////
@@ -74,6 +77,10 @@ typedef struct	s_update
 
 typedef struct s_info
 {
+	int	window_h;
+	int	window_w;
+	int	map_h;
+	int	map_w;
 	t_calculations	rays[490];
 	t_update	up;
 	float		pa;
@@ -88,6 +95,7 @@ typedef struct s_info
 	void		*window;
 	char    	**m_info;
 	char    	**map;
+	int			*buff;
 }   t_info;
 
 void    bresenham(t_win *win, int x0, int y0, int x1, int y1, int c);
