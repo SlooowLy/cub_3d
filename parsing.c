@@ -9,19 +9,30 @@ void	map_name(char *file)
 		print_error(10);
 }
 
-void    parsing(char *map)
+void print_data(data *d)
 {
-	int fd;
+	printf("%s\n", d->n_path);
+	printf("%s\n", d->s_path);
+	printf("%s\n", d->e_path);
+	printf("%s\n", d->w_path);
+	printf("%lX\n", d->c_hexa);
+	printf("%lX\n", d->f_hexa);
+}
+
+void    parsing(char *file_name)
+{
+	int		fd;
 	data	*d;
+	char	**map;
 
 	d = malloc(sizeof(data));
-	map_name(map);
-	fd = open(map, O_RDONLY);
+	map_name(file_name);
+	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 		print_error(errno);
-	char **map = read_map(fd);
+	map = read_map(fd);
 	while (!is_map(*map))
-		
-
-			
+		parse_line(*map++, d);
+	print_data(d);
+	close(fd);
 }

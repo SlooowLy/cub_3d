@@ -11,18 +11,34 @@ void	print_error(int error)
 		printf("Unown map element!\n");
 	else
 		printf("%s\n", strerror(error));
-	exit(1);
+	// exit(1);
 }
 
 int	is_map(char *str)
 {
-	while (*str)
-		if (*str++ == '1')
-			return (1);
+	int	len;
+
+	if (!str)
+		return 1;
+	len = ft_strlen(str);
+	while (*str == '1' || *str == ' ')
+		str++;
+	if (!(*str) && len)
+		return (1);
 	return (0);
 }
 
-unsigned long rgb_to_hexa(int r, int g, int b)
+unsigned long	rgb_to_hexa(int r, int g, int b)
 {   
     return ((r & 0xff) << 16) + ((g & 0xff) << 8) + (b & 0xff);
+}
+
+int	arrlen(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		i++;
+	return (i);
 }
