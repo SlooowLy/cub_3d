@@ -28,5 +28,6 @@ void	parse_line(char *line, data *d);
 int		arrlen(char **arr);
 unsigned long	color_parse(char *str);
 unsigned long	rgb_to_hexa(int r, int g, int b);
+char	**map_checker(char **str);
 
 #endif

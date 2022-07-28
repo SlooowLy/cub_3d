@@ -33,6 +33,8 @@ void    parsing(char *file_name)
 	map = read_map(fd);
 	while (!is_map(*map))
 		parse_line(*map++, d);
-	print_data(d);
+	for (int i = 0; map[i]; i++)
+		printf("%s\n", map[i]);
+	d->map = map_checker(map);
 	close(fd);
 }
