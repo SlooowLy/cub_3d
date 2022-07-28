@@ -9,6 +9,8 @@
 # include <string.h>
 # include <math.h>
 
+# define WINDOW_H 480
+# define WINDOW_W 852
 # define KEY_A 0
 # define KEY_D 2
 # define KEY_W 13
@@ -21,7 +23,10 @@
 # define FALSE 0
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
-# define PATH "./greystone.xpm"
+# define NO "./texturse/greystone.xpm"
+# define SO "./texturse/wood.xpm"
+# define EA "./texturse/redbrick.xpm"
+# define WE "./texturse/bluestone.xpm"
 # define WALL_SIZE 64
 
 // # include "./libft/libft.h"
@@ -77,35 +82,43 @@ typedef struct	s_update
 
 typedef struct s_info
 {
-	int	window_h;
-	int	window_w;
-	int	map_h;
-	int	map_w;
+	int			window_h;
+	int			window_w;
+	int			map_h;
+	int			map_w;
 	t_calculations	rays[490];
 	t_update	up;
 	float		pa;
-	float			px;
+	float		px;
 	float		py;
 	t_img		img_u;
-	t_img		img_u1;
-	t_img		img_u2;
-	t_img		mini_map;
 	t_img		img_d;
 	t_img		img1;
 	t_img		img2;
-	t_img		img3;
 	void		*ml;
 	void		*window;
 	char    	**m_info;
 	char    	**map;
-	int			*buff;
+	int			*buff_no;
+	int			*buff_so;
+	int			*buff_we;
+	int			*buff_ea;
 }   t_info;
 
-void    bresenham(t_win *win, int x0, int y0, int x1, int y1, int c);
-int		ft_strlen(char *c);
-char	**cpy_2(char **str, int i);
-char	**ft_split(char const *x, char c);
-int		read_map(char **all, int fd);
-void	update_player_cord(t_info *info);
+int				draw(void *stru);
+void			get_texture_buff(t_info *info);
+void			get_no_texture(t_info *info);
+void			get_we_texture(t_info *info);
+void			get_so_texture(t_info *info);
+unsigned int	get_color(t_img img, int x, int y);
+void			get_player_position(t_info *info);
+int				key_release(int key, t_info *info);
+int				key_press(int key, t_info *info);
+void			update_player_cord(t_info *info);
+int				ft_strlen(char *c);
+char			**cpy_2(char **str, int i);
+char			**ft_split(char const *x, char c);
+int				read_map(char **all, int fd);
+void			update_player_cord(t_info *info);
 
 #endif
