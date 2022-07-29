@@ -1,5 +1,17 @@
-#ifndef CUB_3D_H
-# define CUB_3D_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3D.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/29 16:46:17 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/07/29 17:05:30 by aaitoual         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef CUB3D_H
+# define CUB3D_H
 
 # include <stdio.h>
 # include <unistd.h>
@@ -11,6 +23,7 @@
 
 # define WINDOW_H 480
 # define WINDOW_W 852
+# define EXIT 53
 # define KEY_A 0
 # define KEY_D 2
 # define KEY_W 13
@@ -18,7 +31,7 @@
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
 # define PI 3.141592653589793238
-# define FOV 60 * (PI / 180)
+# define FOV 1.04
 # define TRUE 1
 # define FALSE 0
 # define INT_MAX 2147483647
@@ -29,29 +42,20 @@
 # define WE "./texturse/bluestone.xpm"
 # define WALL_SIZE 64
 
-// # include "./libft/libft.h"
-
-///////////////////////
-typedef enum	e_playerface
-{
-	ray_up,
-	ray_down,
-	ray_left,
-	ray_right
-}	t_playerface;
-//////////////////////
-
-
 typedef struct s_calculations
 {
-	int	w_x;
-	int	w_y;
-	float	rayAngle;
+	int		rayisup;
+	int		rayisdown;
+	int		rayisleft;
+	int		rayisright;
+	int		w_x;
+	int		w_y;
+	float	rayangle;
 	int		washitvertical;
 	float	distance;
 }	t_calculations;
 
-typedef struct	s_img
+typedef struct s_img
 {
 	void	*img;
 	char	*addr;
@@ -62,15 +66,15 @@ typedef struct	s_img
 
 typedef struct s_win
 {
-    void    *mlx;
-    void    *mlx_win;
-    char    *add;
-    int     bpp;
-    int     ll;
+	void	*mlx;
+	void	*mlx_win;
+	char	*add;
+	int		bpp;
+	int		ll;
 	t_img	img;
-}           t_win;
+}			t_win;
 
-typedef struct	s_update
+typedef struct s_update
 {
 	int	k_d;
 	int	k_a;
@@ -80,31 +84,58 @@ typedef struct	s_update
 	int	k_right;
 }	t_update;
 
+typedef struct s_cast
+{
+	int	vx;
+	int	vy;
+	int	hx;
+	int	hy;
+}	t_cast;
+
 typedef struct s_info
 {
-	int			window_h;
-	int			window_w;
-	int			map_h;
-	int			map_w;
-	t_calculations	rays[490];
-	t_update	up;
-	float		pa;
-	float		px;
-	float		py;
-	t_img		img_u;
-	t_img		img_d;
-	t_img		img1;
-	t_img		img2;
-	void		*ml;
-	void		*window;
-	char    	**m_info;
-	char    	**map;
-	int			*buff_no;
-	int			*buff_so;
-	int			*buff_we;
-	int			*buff_ea;
-}   t_info;
+	int				window_h;
+	int				window_w;
+	int				map_h;
+	int				map_w;
+	t_calculations	*rays;
+	t_cast			cast;
+	t_update		up;
+	float			pa;
+	float			px;
+	float			py;
+	t_img			mini_map;
+	t_img			img_u;
+	t_img			img_tmp;
+	t_img			img_d;
+	t_img			img1;
+	t_img			img2;
+	void			*ml;
+	void			*window;
+	void			*window2;
+	char			**m_info;
+	char			**map;
+	int				*buff_no;
+	int				*buff_so;
+	int				*buff_we;
+	int				*buff_ea;
+}			t_info;
 
+int				check_wall(t_info *info, int x, int y);
+void			rays(t_info *m);
+int				is_wall(t_info *m, int x, int y, char identf);
+void			get_directions(t_info *m, float rayangel, int i);
+void			get_vertical_inter(t_info *m, int i, float
+					*yintercept, float *xintercept);
+double			check_vertical(t_info *m, int i, float rayangel, float ystep);
+int				is_end_window(t_info *m, double x, double y);
+float			normaliseangle(float angle);
+float			distancebetwenpoint(float x1, float y1, float x2, float y2);
+void			rander_walls(t_info *info);
+void			creat_imgs(t_info *info);
+int				get_x(t_info *info);
+int				get_y(t_info *info);
+void			creat_mini_map(t_info *info);
 int				draw(void *stru);
 void			get_texture_buff(t_info *info);
 void			get_no_texture(t_info *info);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3D.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/29 16:45:34 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/07/29 19:01:55 by aaitoual         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3D.h"
 
 void	get_map_h_w(t_info *info)
@@ -20,72 +32,18 @@ void	get_map_h_w(t_info *info)
 	info->map_w = k;
 }
 
-void	my_mlx_pixel_put(t_img *data, int i, int color)
-{
-	char	*dst;
-	int		x;
-	int		y;
-
-	x = 0;
-	y = 0;
-	if (i == 1)
-	{
-		while (y != 240)
-		{
-			x = 0;
-			while (x != 852)
-			{
-				dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-				*(unsigned int*)dst = color;
-				x++;
-			}
-			y++;
-		}
-	}
-	else if (i == 2)
-	{
-		while (y != WALL_SIZE)
-		{
-			x = 0;
-			while (x != WALL_SIZE)
-			{
-				dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-				x++;
-				*(unsigned int*)dst = color;
-			}
-			y++;
-		}
-
-	}
-}
-
-void	creat_imgs(t_info *info)
-{
-	info->img_u.img = mlx_new_image(info->ml, WINDOW_W, WINDOW_H / 2);
-	info->img_d.img = mlx_new_image(info->ml, WINDOW_W, WINDOW_H / 2);
-	info->img1.img = mlx_new_image(info->ml, WALL_SIZE, WALL_SIZE);
-	info->img2.img = mlx_new_image(info->ml, WALL_SIZE, WALL_SIZE);
-	info->img_d.addr = mlx_get_data_addr(info->img_d.img, &info->img_d.bits_per_pixel, &info->img_d.line_length, &info->img_d.endian);
-	info->img_u.addr = mlx_get_data_addr(info->img_u.img, &info->img_u.bits_per_pixel, &info->img_u.line_length, &info->img_u.endian);
-	info->img1.addr = mlx_get_data_addr(info->img1.img, &info->img1.bits_per_pixel, &info->img1.line_length, &info->img1.endian);
-	info->img2.addr = mlx_get_data_addr(info->img2.img, &info->img2.bits_per_pixel, &info->img2.line_length, &info->img2.endian);
-	my_mlx_pixel_put(&info->img_d, 1, 0x00008000);
-	my_mlx_pixel_put(&info->img_u, 1, 0x000FFFF);
-	my_mlx_pixel_put(&info->img1, 2, 0x0000FFFF);
-	my_mlx_pixel_put(&info->img2, 2, 0x00FF0000);
-}
-
 void	creat_the_game(t_info *info)
 {
 	info->ml = mlx_init();
 	get_texture_buff(info);
 	get_map_h_w(info);
 	info->window = mlx_new_window(info->ml, WINDOW_W, WINDOW_H, "cub_3D");
+	info->window2 = mlx_new_window(info->ml, 240, 240, "mini_MAP");
 	creat_imgs(info);
 	get_player_position(info);
 	mlx_loop_hook(info->ml, draw, info);
 	mlx_hook(info->window, 2, 1L<<0, key_press, info);
-	mlx_hook(info->window, 3, 1L<<1, key_release, info);
+	mlx_hook(info->window, 3, 1L<<2, key_release, info);
 	mlx_loop(info->ml);
 }
 
@@ -105,7 +63,26 @@ char	*cpy(char *dest, char *src)
 
 void	get_default(t_info *info)
 {
-	info->pa = PI / 2;
+	int	i;
+	int	j;
+
+	i = -1;
+	while (info->map[++i])
+	{
+		j = -1;
+		while (info->map[i][++j])
+		{
+			if (info->map[i][j] == 'N')
+				info->pa = (3 * PI) / 2;
+			if (info->map[i][j] == 'S')
+				info->pa = (PI) / 2;
+			if (info->map[i][j] == 'W')
+				info->pa = PI;
+			if (info->map[i][j] == 'E')
+				info->pa = 0;
+		}
+	}
+	info->rays = malloc (sizeof (t_calculations) * 320);
 	info->up.k_a = 0;
 	info->up.k_d = 0;
 	info->up.k_left = 0;
@@ -153,7 +130,6 @@ int	main(int ac, char **av)
 	char	*map;
 	int		fd;
 
-	get_default(&info);
 	if (ac != 2)
 	{
 		printf ("error\n");
@@ -167,6 +143,7 @@ int	main(int ac, char **av)
 	while (info.map[++fd])
 		printf ("%s\n", info.map[fd]);
 	//tmp
+	get_default(&info);
 	creat_the_game(&info);
 	return (0);
 }

@@ -6,11 +6,20 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:13:35 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/28 08:13:54 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/29 17:05:26 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
+
+void	ft_exit(t_info *info, int i)
+{
+	if (i == 1)
+	{
+		free(info->rays);
+		exit (1);
+	}
+}
 
 int	key_press(int key, t_info *info)
 {
@@ -26,6 +35,8 @@ int	key_press(int key, t_info *info)
 		info->up.k_right = 1;
 	if (key == KEY_LEFT)
 		info->up.k_left = 1;
+	if (key == EXIT)
+		ft_exit(info, 1);
 	return (0);
 }
 

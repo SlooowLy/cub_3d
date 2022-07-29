@@ -39,8 +39,8 @@ typedef enum	e_playerface
 
 typedef struct s_calculations
 {
-	int	w_x;
-	int	w_y;
+	int		w_x;
+	int		w_y;
 	float	rayAngle;
 	int		washitvertical;
 	float	distance;
@@ -96,6 +96,7 @@ typedef struct s_info
 	t_img		img3;
 	void		*ml;
 	void		*window;
+	void		*window2;
 	char    	**m_info;
 	char    	**map;
 	int			*buff;

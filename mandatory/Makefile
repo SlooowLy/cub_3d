@@ -4,7 +4,8 @@ CFLAGS = -Wall -Wextra -Werror -Imlx
 
 SRC = cub3D.c ./keys_cordinations/cordinations.c ./keys_cordinations/key_press_release.c ./keys_cordinations/player_first_cordinations.c \
 		./tmp/ft_split.c ./tmp/get_map.c ./tmp/ft_strlen.c ./texturse_reader/get_texturse_buff.c ./texturse_reader/get_texturse_buff_utils.c \
-		./draw/draw.c \
+		./draw/draw.c ./minimap/minimap.c ./imgs/creat_imgs.c ./draw/cast_rays.c ./draw/rander_wall.c ./draw/cast_rays_utils1.c ./draw/cast_rays_utils2.c \
+		./keys_cordinations/cordinations_utils.c \
 
 OBJ = $(SRC:.c=.o)
 

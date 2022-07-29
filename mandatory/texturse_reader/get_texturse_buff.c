@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:47:24 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/28 09:09:20 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/29 16:45:19 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ unsigned int	get_color(t_img img, int x, int y)
 
 	pixel = y * img.line_length + x * 4;
 	ptr = img.addr + pixel;
-	return ((((unsigned char)ptr[2]) << 16) + (((unsigned char)ptr[1]) << 8) + ((unsigned char)ptr[0]));
+	return ((((unsigned char)ptr[2]) << 16)
+		+ (((unsigned char)ptr[1]) << 8) + ((unsigned char)ptr[0]));
 }
 
 void	get_texture_buff(t_info *info)

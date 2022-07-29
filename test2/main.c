@@ -269,7 +269,7 @@ void rays(t_info *m)
 		cast_ray(ra, i, m);
 		// puts ("koooo");
 		// printf("x >> %d y >> %d\n", m->rays[i].w_x, m->rays[i].w_y);
-		drawDDA(m->px,m->py,m->rays[i].w_x,m->rays[i].w_y,m);
+		// drawDDA(m->px,m->py,m->rays[i].w_x,m->rays[i].w_y,m);
 		i++;
 		ra += FOV/320;
 	}
@@ -485,9 +485,11 @@ void	put_wall(t_info *m, float wall_height, int i, unsigned int c)
 		x = 0;
 		while (x != 3)
 		{
-			dst = img.addr + (y * img.line_length + x * (img.bits_per_pixel / 8));
 			if ((WALL_SIZE *iy) > 120 && ix < 852 - 120)
+			{
+				dst = img.addr + (y * img.line_length + x * (img.bits_per_pixel / 8));
 				*(unsigned int*)dst = m->buff[(WALL_SIZE *iy) + ix];
+			}
 			x++;
 		}
 		y++;
@@ -602,7 +604,8 @@ int	get_x(t_info *info)
 {
 	int	x;
 
-	x = 852 - (60) - (int)floor((info->px / 64) * 17);
+	// x = 852 - (60) - (int)floor((info->px / 64) * 17);
+	x = (120) - (int)floor((info->px / 64) * 17);
 	return (x);
 }
 
@@ -610,7 +613,7 @@ int	get_y(t_info *info)
 {
 	int	y;
 
-	y = 60 - (int)floor((info->py / 64) * 17);
+	y = 120 - (int)floor((info->py / 64) * 17);
 	return (y);
 }
 
@@ -626,12 +629,12 @@ int	draw(void *stru)
 	mlx_clear_window(info->ml, info->window);
 	update_player_cord(info);
 	// printf_photo(info);
-	mlx_put_image_to_window(info->ml, info->window, info->mini_map.img, get_x(info), get_y(info));
 	// mlx_put_image_to_window(info->ml, info->window, info->img_u1.img, 0, 0);
+	mlx_put_image_to_window(info->ml, info->window2, info->mini_map.img, get_x(info), get_y(info));
 	mlx_put_image_to_window(info->ml, info->window, info->img_u1.img, 0, 0);
 	mlx_put_image_to_window(info->ml, info->window, info->img_u2.img, 0, 240 - 120);
 	mlx_put_image_to_window(info->ml, info->window, info->img_d.img, 0, 240);
-	mlx_put_image_to_window(info->ml, info->window, info->img3.img, 852 - 60, 60);
+	mlx_put_image_to_window(info->ml, info->window2, info->img3.img, 120, 120);
 	// while (info->map[++i])
 	// {
 	// 	j = -1;
@@ -885,6 +888,7 @@ void	ft_creat_window(t_info *info)
 	get_texture_buff(info);
 	get_window_info(info);
 	info->window = mlx_new_window(info->ml, 852, 480, "CUB_3D");
+	info->window2 = mlx_new_window(info->ml, 240, 240, "mini_MAP :)");
 	creat_imgs(info);
 	get_player_position(info);
 	mlx_loop_hook(info->ml, draw, info);

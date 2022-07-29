@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player_first_cordinations.c                        :+:      :+:    :+:   */
+/*   cast_rays_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 08:13:38 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 18:48:22 by aaitoual         ###   ########.fr       */
+/*   Created: 2022/07/29 16:25:21 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/07/29 16:34:46 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-void	get_player_position(t_info *info)
+int	is_end_window(t_info *m, double x, double y)
 {
-	int	i;
-	int	j;
+	if (x < 0 || x >= (WALL_SIZE * WALL_SIZE)
+		|| y < 0 || y >= m->map_h * WALL_SIZE)
+		return (TRUE);
+	return (FALSE);
+}
 
-	i = -1;
-	while (info->map[++i])
+float	normaliseangle(float angle)
+{
+	angle = remainder(angle, (2 * PI));
+	if (angle < 0)
 	{
-		j = -1;
-		while (info->map[i][++j])
-		{
-			if (info->map[i][j] == 'N' || info->map[i][j] == 'S'
-				|| info->map[i][j] == 'W' || info->map[i][j] == 'E')
-			{
-				info->px = j * WALL_SIZE;
-				info->py = i * WALL_SIZE;
-				return ;
-			}
-		}
+		angle = (2 * PI) + angle;
 	}
+	return (angle);
+}
+
+float	distancebetwenpoint(float x1, float y1, float x2, float y2)
+{
+	return (sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)));
 }
