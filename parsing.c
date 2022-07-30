@@ -26,10 +26,11 @@ data	*parsing(char *file_name)
 	}
 	map = read_map(fd);
 	i = 0;
-	while (!is_map(map[i]))
+	while (map[i][0] != ' ' && map[i][0] != '1')
 		parse_line(map[i++], d, map);
-	d->map = map_checker(map + i, d, map);
+	d->map = map_checker(map + i, d, map); 
 	free_arr(map);
+	all_set(d);
 	close(fd);
 	return (d);
 }

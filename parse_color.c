@@ -49,6 +49,8 @@ int	*parse_str_color(char *str)
 	while (arr[i])
 	{
 		out[i] = ft_atoi2(arr[i]);
+		if (out[i] == -1)
+			return (0);
 		i++;
 	}
 	free_arr(arr);

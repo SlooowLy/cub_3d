@@ -10,8 +10,8 @@ void print_data(data *d)
 	printf("%lX\n", d->f_hexa);
     if (d->map == 0)
         printf("0\n");
-    // for (int i = 0; d->map[i]; i++)
-    //     printf("%s\n", d->map[i]);
+    for (int i = 0; d->map[i]; i++)
+        printf("%s\n", d->map[i]);
 }
 
 void    free_stack(data *d)
@@ -31,6 +31,6 @@ int main(int ac, char **av)
         return 1;
     d = parsing(av[1]);
     print_data(d);
-    free_stack(d);
+    // free_stack(d);
     // system("leaks parsing");
 }

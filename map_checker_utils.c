@@ -32,11 +32,11 @@ int	all_set(data *d)
 		|| !d->e_path || !d->c_hexa || !d->f_hexa
 		|| !d->map)
 	{
-		return 1;
+		print_error(14);
 	}
 	if (check_map_characters(d->map))
 	{
-		return 1;
+		print_error(15);
 	}
 	return 0;
 }

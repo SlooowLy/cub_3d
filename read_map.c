@@ -16,7 +16,7 @@ int split_len(char *str)
 	int	out;
 
 	out = 0;
-	while (*str++ != '\n')
+	while (*str != '\n' && *str++)
 		out++;
 	return out;
 }
@@ -29,7 +29,7 @@ char **split_map(char *str)
 	char	**splited;
   
 	i = 0;
-	splited = (char **)malloc(map_len(str) * sizeof(char **) + 2);
+	splited = (char **)malloc((map_len(str) + 2) * sizeof(char **));
 	if (!splited)
 		return (0);
 	x = 0;
@@ -39,7 +39,8 @@ char **split_map(char *str)
 		splited[x] = malloc(split_len(str+i) + 1);
 		while (str[i] != '\n' && str[i])
 			splited[x][y++] = str[i++];
-		splited[x++][y] = 0;
+		splited[x][y] = 0;
+		x++;
 		if (str[i])
 			i++;
 	}
@@ -63,6 +64,7 @@ char	**read_map(int fd)
 		file = ft_strjoin(file, buff);
 	}
 	free((void *)buff);
+
 	map = split_map(file);
 	free((void *)file);
 	return map;

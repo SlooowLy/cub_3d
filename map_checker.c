@@ -81,7 +81,7 @@ char	**map_checker(char **map, data *d, char **file)
 {
 	if (!(*map))
 		return (0);
-	if (all_set(d) || check_lines(map) || check_sub_lines(map))
+	if (check_lines(map) || check_sub_lines(map))
 	{
 		free_arr(file);
 		free_data(d);
