@@ -1,12 +1,5 @@
 #include "parsing.h"
 
-char	*pass_spaces(char *str)
-{
-	while (*str == ' ')
-		str++;
-	return (str);
-}
-
 int	is_meta(char c)
 {
 	if (c == '0' || c == 'N' 
@@ -55,11 +48,9 @@ int	check_lines(char **s)
 				if (s[i - 1][j] == ' ' || s[i - 1][j + 1] == ' '
 					|| s[i][j + 1] == ' ' || s[i + 1][j + 1] == ' '
 					|| s[i + 1][j] == ' ' || s[i + 1][j - 1] == ' '
-					|| s[i][j - 1] == ' ' || s[i - 1][j - 1] == ' ')
-					{
-						printf("i = %d, j = %d\n", i, j);
-					return 1;
-					}
+					|| s[i][j - 1] == ' ' || s[i - 1][j - 1] == ' '
+					|| !s[i - 1][j + 1] || !s[i + 1][j + 1])
+						return 1;
 			}
 			j++;
 		}
@@ -68,11 +59,33 @@ int	check_lines(char **s)
 	return (0);
 }
 
-char	**map_checker(char **str)
+char	**allocate_map(char **map)
 {
-	if (check_lines(str))
-		printf("Error1\n");
-	if (check_sub_lines(str))
-		printf("Error2\n");
-	return str;
+	char	**map2;
+	int		i;
+
+	map2 = malloc((arrlen(map) + 1) * sizeof(char *));
+	if (!map2)
+		return (0);
+	i = 0;
+	while (map[i])
+	{
+		map2[i] = ft_strdup(map[i]);
+		i++;
+	}
+	map2[i] = 0;
+	return (map2);
+}
+
+char	**map_checker(char **map, data *d, char **file)
+{
+	if (!(*map))
+		return (0);
+	if (all_set(d) || check_lines(map) || check_sub_lines(map))
+	{
+		free_arr(file);
+		free_data(d);
+		print_error(14);
+	}
+	return allocate_map(map);
 }

@@ -4,7 +4,7 @@ LIBFT = ./libft/libft.a
 
 FLAGS = -Wall -Wextra -Werror
 
-SRCS = main.c parsing.c read_map.c parsing_utils.c parse_line.c parse_color.c map_checker.c
+SRCS = main.c parsing.c read_map.c parsing_utils.c parse_line.c parse_color.c map_checker.c map_checker_utils.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -30,3 +30,6 @@ fclean: clean
 	@rm -f $(LIBFT)
 
 re : fclean all
+
+c : all clean
+	./parsing test.cub

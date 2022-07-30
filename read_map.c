@@ -51,6 +51,7 @@ char	**read_map(int fd)
 {
 	char	*buff;
 	char	*file;
+	char	**map;
 
 	buff = malloc(2);
 	file = malloc(1);
@@ -61,5 +62,8 @@ char	**read_map(int fd)
 	{
 		file = ft_strjoin(file, buff);
 	}
-	return split_map(file);
+	free((void *)buff);
+	map = split_map(file);
+	free((void *)file);
+	return map;
 }

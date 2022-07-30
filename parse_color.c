@@ -51,20 +51,27 @@ int	*parse_str_color(char *str)
 		out[i] = ft_atoi2(arr[i]);
 		i++;
 	}
+	free_arr(arr);
 	return out;
 }
 
-unsigned long	color_parse(char *str)
+unsigned long	color_parse(char *str, data *d, char **map)
 {
-	int	*rgb;
-	int	i;
+	int				*rgb;
+	int				i;
+	unsigned long	hexa;
 
 	rgb = parse_str_color(str);
-	if (!rgb)
-		return (0);
+	if (!rgb || rgb[0] < 0 || rgb[0] > 255 
+		|| rgb[1] < 0 || rgb[1] > 255
+		|| rgb[2] < 0 || rgb[2] > 255)
+	{
+		free_arr(map);
+		free_data(d);
+		print_error(12);
+	}
 	i = 0;
-	while (i < 3)
-		if (rgb[i] < 0 || rgb[i++] > 255)
-			return (0);	
-	return (rgb_to_hexa(rgb[0], rgb[1], rgb[2]));
+	hexa = rgb_to_hexa(rgb[0], rgb[1], rgb[2]);
+	free(rgb);
+	return (hexa);
 }
