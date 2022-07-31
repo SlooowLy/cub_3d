@@ -61,8 +61,9 @@ char	**read_map(int fd)
 	file[0] = 0;
 	while (read(fd, buff, 1))
 	{
+		buff[1] = '\0';
 		file = ft_strjoin(file, buff);
-		printf ("%s\n", file);
+		printf ("%s", file);
 	}
 	free((void *)buff);
 	map = split_map(file);
