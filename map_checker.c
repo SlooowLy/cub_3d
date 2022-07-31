@@ -2,7 +2,7 @@
 
 int	is_meta(char c)
 {
-	if (c == '0' || c == 'N' 
+	if (c == '0' || c == 'N'
 		|| c == 'S' || c == 'E' || c == 'W')
 		return (1);
 	return (0);
@@ -27,7 +27,7 @@ int	check_sub_lines(char **s)
 	last = arrlen(s) - 1;
 	i = 0;
 	while (s[last][i])
-		if (is_meta(s[0][i++]))
+		if (is_meta(s[last][i++]))
 			return (1);
 	return (0);
 }
@@ -38,7 +38,7 @@ int	check_lines(char **s)
 	int	j;
 
 	i = 0;
-	while (s[i])
+	while (s[i + 1])
 	{
 		j = 0;
 		while (s[i][j])

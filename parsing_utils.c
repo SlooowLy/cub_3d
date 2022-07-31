@@ -14,8 +14,6 @@ void	print_error(int error)
 	else if (error == 13)
 		printf("Unown map character!\n");
 	else if (error == 14)
-		printf("Map element messing!\n");
-	else if (error == 15)
 		printf("Map characters error!\n");
 	else
 		printf("%s\n", strerror(error));

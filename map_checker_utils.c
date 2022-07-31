@@ -26,6 +26,17 @@ int	check_map_characters(char **map)
 	return (0);
 }
 
+int	check_empty_lines(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[i])
+		if (!map[i++][0])
+			return (1);
+	return (0);
+}
+
 int	all_set(data *d)
 {
 	if (!d->n_path || !d->s_path || !d->w_path
@@ -34,9 +45,9 @@ int	all_set(data *d)
 	{
 		print_error(14);
 	}
-	if (check_map_characters(d->map))
+	if (check_map_characters(d->map) || check_empty_lines(d->map))
 	{
-		print_error(15);
+		print_error(14);
 	}
 	return 0;
 }
