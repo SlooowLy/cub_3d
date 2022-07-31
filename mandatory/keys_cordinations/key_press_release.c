@@ -6,17 +6,41 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:13:35 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 17:05:26 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 10:54:28 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
+int mouse_move(int x, int y, t_info *info)
+{
+	x = 0;
+	// info->pa = info->pa + (((x) / 200) * PI / 180.0);
+	info->pa = info->pa;
+	y = 0;
+	return (0);
+}
+
 void	ft_exit(t_info *info, int i)
 {
+	// int	i;
+
+	// i = -1;
 	if (i == 1)
 	{
-		free(info->rays);
+		free (info->rays);
+		free (info->buff_ea);
+		free (info->buff_so);
+		free (info->buff_we);
+		free (info->buff_no);
+		// mlx_destroy_image(info->ml, info->img1.img);
+		// mlx_destroy_image(info->ml, info->img_d.img);
+		// mlx_destroy_image(info->ml, info->img_u.img);
+		// mlx_destroy_image(info->ml, info->mini_map.img);
+		// mlx_destroy_image(info->ml, info->img_tmp.img);
+		system ("leaks cub3d");
+		// mlx_destroy_window(info->ml, info->window2);
+		// mlx_destroy_window(info->ml, info->window);
 		exit (1);
 	}
 }

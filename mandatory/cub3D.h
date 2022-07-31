@@ -6,13 +6,14 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:46:17 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 17:05:30 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 12:29:41 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# include "./parsing/parsing.h"
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -25,6 +26,7 @@
 # define WINDOW_W 852
 # define EXIT 53
 # define KEY_A 0
+# define KEY_M 46
 # define KEY_D 2
 # define KEY_W 13
 # define KEY_S 1
@@ -94,6 +96,7 @@ typedef struct s_cast
 
 typedef struct s_info
 {
+	data			*k;
 	int				window_h;
 	int				window_w;
 	int				map_h;
@@ -109,7 +112,6 @@ typedef struct s_info
 	t_img			img_tmp;
 	t_img			img_d;
 	t_img			img1;
-	t_img			img2;
 	void			*ml;
 	void			*window;
 	void			*window2;
@@ -121,6 +123,7 @@ typedef struct s_info
 	int				*buff_ea;
 }			t_info;
 
+int				mouse_move(int x, int y, t_info *param);
 int				check_wall(t_info *info, int x, int y);
 void			rays(t_info *m);
 int				is_wall(t_info *m, int x, int y, char identf);
@@ -146,10 +149,6 @@ void			get_player_position(t_info *info);
 int				key_release(int key, t_info *info);
 int				key_press(int key, t_info *info);
 void			update_player_cord(t_info *info);
-int				ft_strlen(char *c);
-char			**cpy_2(char **str, int i);
-char			**ft_split(char const *x, char c);
-int				read_map(char **all, int fd);
 void			update_player_cord(t_info *info);
 
 #endif

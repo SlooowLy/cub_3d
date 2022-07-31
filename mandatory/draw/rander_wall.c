@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:22:19 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 16:53:24 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 12:04:32 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,33 @@ int	*get_texturse_info(t_info *m, int i, int *ix)
 		else
 			return (m->buff_we);
 	}
+}
+
+void	rander_img(t_info *m, int wall_h, int i)
+{
+	static int	walk;
+	int			y;
+	static int	k = -2;
+
+	if (walk >= 20 || walk <= -20)
+	{
+		k *= -1;
+		if (walk >= 20)
+			walk = 20;
+		else
+			walk = -20;
+		walk += k;
+	}
+	if (!i)
+	{
+		if (m->up.k_a || m->up.k_d || m->up.k_s || m->up.k_w)
+			walk += k * 3;
+		else
+			walk += k;
+	}
+	y = (480 / 2) - (wall_h / 2);
+	mlx_put_image_to_window(m->ml, m->window, m->img_tmp.img,
+		i, y - (walk / 2));
 }
 
 void	put_wall(t_info *m, int wall_h, int i, int y)
@@ -56,17 +83,16 @@ void	put_wall(t_info *m, int wall_h, int i, int y)
 			x++;
 		}
 	}
-	mlx_put_image_to_window(m->ml, m->window, m->img_tmp.img,
-		i, (480 / 2) - (wall_h / 2));
+	rander_img(m, wall_h, i);
 	mlx_destroy_image(m->ml, m->img_tmp.img);
 }
 
 void	rander_walls(t_info *info)
 {
-	int		i;
-	float	projection_distance;
-	float	wall_height;
-	float	dis;
+	int			i;
+	float		projection_distance;
+	float		wall_height;
+	float		dis;
 
 	projection_distance = (852 / 2) / tan(60 / 2);
 	i = 0;

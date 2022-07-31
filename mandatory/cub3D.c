@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:45:34 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 19:01:55 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 12:32:02 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ void	creat_the_game(t_info *info)
 	get_player_position(info);
 	mlx_loop_hook(info->ml, draw, info);
 	mlx_hook(info->window, 2, 1L<<0, key_press, info);
+	mlx_hook(info->window, 6, 0, mouse_move, info);
 	mlx_hook(info->window, 3, 1L<<2, key_release, info);
 	mlx_loop(info->ml);
 }
@@ -112,6 +113,16 @@ char	**cpy_2(char **str, int j)
 	return (ret);
 }
 
+// void    free_stack(data *d)
+// {
+//     free(d->n_path);
+//     free(d->s_path);
+//     free(d->e_path);
+//     free(d->w_path);
+//     free_arr(d->map);
+//     free(d);
+// }
+
 int	get_map_info(t_info *info, char *map)
 {
 	int		i;
@@ -120,14 +131,15 @@ int	get_map_info(t_info *info, char *map)
 	i = -1;
 	splited = ft_split(map, '\n');
 	info->map = cpy_2(splited, 7);
+	while (splited[++i])
+		free (splited[i]);
+	free(splited);
 	return (1);
 }
 
 int	main(int ac, char **av)
 {
 	t_info	info;
-	//tmp
-	char	*map;
 	int		fd;
 
 	if (ac != 2)
@@ -135,15 +147,11 @@ int	main(int ac, char **av)
 		printf ("error\n");
 		exit (1);
 	}
-	fd = open(av[1], O_RDONLY);
-	read_map(&map, fd);
-	if (!get_map_info(&info, map))
-		return (0);
+	info.k = parsing(av[1]);
 	fd = -1;
-	while (info.map[++fd])
-		printf ("%s\n", info.map[fd]);
-	//tmp
-	get_default(&info);
-	creat_the_game(&info);
+	while (info.k->map[++fd])
+		printf ("%s\n", info.k->map[fd]);
+	// get_default(&info);
+	// creat_the_game(&info);
 	return (0);
 }
