@@ -31,6 +31,6 @@ int main(int ac, char **av)
         return 1;
     d = parsing(av[1]);
     print_data(d);
-    // free_stack(d);
+    free_stack(d);
     // system("leaks parsing");
 }

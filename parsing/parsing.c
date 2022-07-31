@@ -30,6 +30,7 @@ data	*parsing(char *file_name)
 		parse_line(map[i++], d, map);
 	d->map = map_checker(map + i, d, map); 
 	free_arr(map);
+	all_set(d);
 	close(fd);
 	return (d);
 }
