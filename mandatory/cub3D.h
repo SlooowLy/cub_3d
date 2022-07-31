@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:46:17 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 12:29:41 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:33:45 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,6 @@
 # define FALSE 0
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
-# define NO "./texturse/greystone.xpm"
-# define SO "./texturse/wood.xpm"
-# define EA "./texturse/redbrick.xpm"
-# define WE "./texturse/bluestone.xpm"
 # define WALL_SIZE 64
 
 typedef struct s_calculations
@@ -96,7 +92,7 @@ typedef struct s_cast
 
 typedef struct s_info
 {
-	data			*k;
+	data			k;
 	int				window_h;
 	int				window_w;
 	int				map_h;
@@ -116,7 +112,6 @@ typedef struct s_info
 	void			*window;
 	void			*window2;
 	char			**m_info;
-	char			**map;
 	int				*buff_no;
 	int				*buff_so;
 	int				*buff_we;

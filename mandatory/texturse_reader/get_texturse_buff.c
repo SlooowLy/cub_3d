@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:47:24 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 16:45:19 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:55:16 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	get_texture_buff(t_info *info)
 	int		k;
 	t_img	img1;
 
-	img1.img = mlx_xpm_file_to_image(info->ml, EA, &j, &i);
+	img1.img = mlx_xpm_file_to_image(info->ml, info->k.e_path, &j, &i);
 	img1.addr = mlx_get_data_addr(img1.img, &img1.bits_per_pixel,
 			&img1.line_length, &img1.endian);
 	info->buff_ea = malloc(4 * i * j);

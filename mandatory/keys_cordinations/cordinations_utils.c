@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:40:58 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 16:41:09 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:27:26 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	check_wall(t_info *info, int x, int y)
 	int	j;
 
 	i = -1;
-	while (info->map[++i])
+	while (info->k.map[++i])
 	{
 		j = -1;
-		while (info->map[i][++j])
+		while (info->k.map[i][++j])
 		{
-			if (info->map[i][j] == '1')
+			if (info->k.map[i][j] == '1')
 			{
 				i = i + 1 - 1;
 				if ((x >= (j * 64) - 10 && x <= ((j + 1) * 64) + 10)

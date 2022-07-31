@@ -9,13 +9,21 @@ void	map_name(char *file)
 		print_error(10);
 }
 
-data	*parsing(char *file_name)
+void	get_default_d(data *d)
+{
+	d->n_path = NULL;
+	d->s_path = NULL;
+	d->e_path = NULL;
+	d->w_path = NULL;
+}
+
+data	*parsing(char *file_name, data *d)
 {
 	int		fd;
-	data	*d;
 	char	**map;
 	int		i;
 
+	get_default_d(d);
 	d = malloc(sizeof(data));
 	map_name(file_name);
 	fd = open(file_name, O_RDONLY);
@@ -25,10 +33,6 @@ data	*parsing(char *file_name)
 		print_error(errno);
 	}
 	map = read_map(fd);
-	i = -1;
-	while (map[++i])
-		printf ("%s\n", map[i]);
-	puts ("yooo");
 	i = 0;
 	while (map[i][0] != ' ' && map[i][0] != '1')
 		parse_line(map[i++], d, map);

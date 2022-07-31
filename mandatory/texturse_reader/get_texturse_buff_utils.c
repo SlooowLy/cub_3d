@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 09:07:18 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 16:44:41 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:24:51 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	get_no_texture(t_info *info)
 	t_img	img1;
 	int		*buff;
 
-	img1.img = mlx_xpm_file_to_image(info->ml, NO, &j, &i);
+	img1.img = mlx_xpm_file_to_image(info->ml, info->k.n_path, &j, &i);
 	img1.addr = mlx_get_data_addr(img1.img, &img1.bits_per_pixel,
 			&img1.line_length, &img1.endian);
 	buff = malloc(4 * i * j);
@@ -47,7 +47,7 @@ void	get_we_texture(t_info *info)
 	t_img	img1;
 	int		*buff;
 
-	img1.img = mlx_xpm_file_to_image(info->ml, WE, &j, &i);
+	img1.img = mlx_xpm_file_to_image(info->ml, info->k.w_path, &j, &i);
 	img1.addr = mlx_get_data_addr(img1.img, &img1.bits_per_pixel,
 			&img1.line_length, &img1.endian);
 	buff = malloc(4 * i * j);
@@ -74,7 +74,7 @@ void	get_so_texture(t_info *info)
 	t_img	img1;
 	int		*buff;
 
-	img1.img = mlx_xpm_file_to_image(info->ml, SO, &j, &i);
+	img1.img = mlx_xpm_file_to_image(info->ml, info->k.s_path, &j, &i);
 	img1.addr = mlx_get_data_addr(img1.img, &img1.bits_per_pixel,
 			&img1.line_length, &img1.endian);
 	buff = malloc(4 * i * j);

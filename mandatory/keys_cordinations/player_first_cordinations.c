@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:13:38 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 18:48:22 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:26:23 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	get_player_position(t_info *info)
 	int	j;
 
 	i = -1;
-	while (info->map[++i])
+	while (info->k.map[++i])
 	{
 		j = -1;
-		while (info->map[i][++j])
+		while (info->k.map[i][++j])
 		{
-			if (info->map[i][j] == 'N' || info->map[i][j] == 'S'
-				|| info->map[i][j] == 'W' || info->map[i][j] == 'E')
+			if (info->k.map[i][j] == 'N' || info->k.map[i][j] == 'S'
+				|| info->k.map[i][j] == 'W' || info->k.map[i][j] == 'E')
 			{
 				info->px = j * WALL_SIZE;
 				info->py = i * WALL_SIZE;

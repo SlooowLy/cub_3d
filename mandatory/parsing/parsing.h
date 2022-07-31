@@ -21,7 +21,7 @@ typedef struct
 
 
 char			**read_map(int fd);
-data			*parsing(char *file_name);
+data			*parsing(char *file_name, data *d);
 void			print_error(int error);
 int				is_map(char *str);
 void			parse_line(char *line, data *d, char **map);

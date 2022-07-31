@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:24:44 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 16:53:42 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:28:07 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_wall(t_info *m, int x, int y, char identf)
 	{
 		return (TRUE);
 	}
-	if (m->map[grid_y][grid_x] == identf)
+	if (m->k.map[grid_y][grid_x] == identf)
 	{
 		return (TRUE);
 	}

@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 15:20:53 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/29 18:48:56 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:28:41 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	get_y(t_info *info)
 
 int	get_color_map(t_info *info, int i, int j)
 {
-	if (info->map[(int)floor(i / 17)][(int)floor(j / 17)] == '0')
+	if (info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == '0')
 		return (0x0FFFFFF);
-	if (info->map[(int)floor(i / 17)][(int)floor(j / 17)] == 'N'
-		|| info->map[(int)floor(i / 17)][(int)floor(j / 17)] == 'S'
-		|| info->map[(int)floor(i / 17)][(int)floor(j / 17)] == 'E'
-		|| info->map[(int)floor(i / 17)][(int)floor(j / 17)] == 'W')
+	if (info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == 'N'
+		|| info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == 'S'
+		|| info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == 'E'
+		|| info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == 'W')
 		return (0x0FFFFFF);
-	if (info->map[(int)floor(i / 17)][(int)floor(j / 17)] == '1')
+	if (info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == '1')
 		return (0x0FF00FF);
 	return (0x0FF00FF);
 }

@@ -1,11 +1,10 @@
-NO     ./assets/bluestone.xpm
+NO ./texturse/greystone.xpm
 
-SO       ./assets/eagle.xpm
+SO ./texturse/wood.xpm
 
-WE ./assets/floor_1.xpm
+WE ./texturse/redbrick.xpm
 
-EA ./assets/purplestone.xpm
-
+EA ./texturse/bluestone.xpm
 
 F 226,100,55
 

@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:45:34 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 14:07:42 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 17:31:56 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	get_map_h_w(t_info *info)
 
 	k = 0;
 	i = -1;
-	while (info->map[++i])
+	while (info->k.map[++i])
 	{
 		j = 0;
-		while (info->map[i][j])
+		while (info->k.map[i][j])
 			j++;
 		if (j > k)
 			k = j;
@@ -68,18 +68,18 @@ void	get_default(t_info *info)
 	int	j;
 
 	i = -1;
-	while (info->map[++i])
+	while (info->k.map[++i])
 	{
 		j = -1;
-		while (info->map[i][++j])
+		while (info->k.map[i][++j])
 		{
-			if (info->map[i][j] == 'N')
+			if (info->k.map[i][j] == 'N')
 				info->pa = (3 * PI) / 2;
-			if (info->map[i][j] == 'S')
+			if (info->k.map[i][j] == 'S')
 				info->pa = (PI) / 2;
-			if (info->map[i][j] == 'W')
+			if (info->k.map[i][j] == 'W')
 				info->pa = PI;
-			if (info->map[i][j] == 'E')
+			if (info->k.map[i][j] == 'E')
 				info->pa = 0;
 		}
 	}
@@ -123,35 +123,20 @@ char	**cpy_2(char **str, int j)
 //     free(d);
 // }
 
-int	get_map_info(t_info *info, char *map)
-{
-	int		i;
-	char	**splited;
-
-	i = -1;
-	splited = ft_split(map, '\n');
-	info->map = cpy_2(splited, 7);
-	while (splited[++i])
-		free (splited[i]);
-	free(splited);
-	return (1);
-}
-
 int	main(int ac, char **av)
 {
 	t_info	info;
-	int		fd;
+	int	i = -1;
 
 	if (ac != 2)
 	{
 		printf ("error\n");
 		exit (1);
 	}
-	info.k = parsing(av[1]);
-	fd = -1;
-	while (info.k->map[++fd])
-		printf ("%s\n", info.k->map[fd]);
-	// get_default(&info);
-	// creat_the_game(&info);
+	info.k = *parsing(av[1], &info.k);
+	while (info.k.map[++i])
+		printf ("%s\n", info.k.map[i]);
+	get_default(&info);
+	creat_the_game(&info);
 	return (0);
 }
