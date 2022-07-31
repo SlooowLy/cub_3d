@@ -6,44 +6,43 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:27:05 by mbenkhat          #+#    #+#             */
-/*   Updated: 2022/07/31 13:41:42 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 15:02:54 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len(char *str)
+static void	join(char *result, char *s1, char *s2)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
-{
-	int		i;
-	int		k;
-	int		j;
-	char	*a1;
-
-	i = len(s1) + len(s2);
-	j = 0;
-	k = 0;
-	a1 = malloc(i + 1);
-	if (a1 == 0)
-		return (0);
-	while (s1 && s1[j] != '\0')
+	while (s1[i])
 	{
-		a1[j] = s1[j];
+		result[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[j])
+	{
+		result[i] = s2[j];
+		i++;
 		j++;
 	}
-	while (s2 && s2[k] != '\0')
-		a1[j++] = s2[k++];
-	a1[j] = '\0';
-	return (a1);
+	result[i] = 0;
+}
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*result;
+
+	if (!s1 || !s2)
+		return (0);
+	result = (char *)malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
+	if (result == NULL)
+		return (NULL);
+	join(result, (char *)s1, (char *)s2);
+	free((void *)s1);
+	return (result);
 }

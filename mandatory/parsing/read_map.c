@@ -53,19 +53,20 @@ char	**read_map(int fd)
 	char	*buff;
 	char	*file;
 	char	**map;
+	int		i;
 
-	buff = malloc(2);
 	file = malloc(1);
-	if (!buff || !file)
+	buff = malloc(2);
+	if (!file || !buff)
 		return (0);
-	file[0] = 0;
-	while (read(fd, buff, 1))
+	file[0] = '\0';
+	i = read(fd, buff, 1);
+	while (i == 1)
 	{
 		buff[1] = '\0';
 		file = ft_strjoin(file, buff);
-		printf ("%s", file);
+		i = read(fd, buff, 1);
 	}
-	free((void *)buff);
 	map = split_map(file);
 	free((void *)file);
 	return map;

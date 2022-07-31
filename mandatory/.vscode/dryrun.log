@@ -1,0 +1,64 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/aaitoual/Desktop/push/mandatory'
+cc -Wall -Wextra -Werror -Imlx -c cub3D.c -o cub3D.o
+cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/cordinations.c -o keys_cordinations/cordinations.o
+cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/key_press_release.c -o keys_cordinations/key_press_release.o
+cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/player_first_cordinations.c -o keys_cordinations/player_first_cordinations.o
+cc -Wall -Wextra -Werror -Imlx -c texturse_reader/get_texturse_buff.c -o texturse_reader/get_texturse_buff.o
+cc -Wall -Wextra -Werror -Imlx -c texturse_reader/get_texturse_buff_utils.c -o texturse_reader/get_texturse_buff_utils.o
+cc -Wall -Wextra -Werror -Imlx -c draw/draw.c -o draw/draw.o
+cc -Wall -Wextra -Werror -Imlx -c minimap/minimap.c -o minimap/minimap.o
+cc -Wall -Wextra -Werror -Imlx -c imgs/creat_imgs.c -o imgs/creat_imgs.o
+cc -Wall -Wextra -Werror -Imlx -c draw/cast_rays.c -o draw/cast_rays.o
+cc -Wall -Wextra -Werror -Imlx -c draw/rander_wall.c -o draw/rander_wall.o
+cc -Wall -Wextra -Werror -Imlx -c draw/cast_rays_utils1.c -o draw/cast_rays_utils1.o
+cc -Wall -Wextra -Werror -Imlx -c draw/cast_rays_utils2.c -o draw/cast_rays_utils2.o
+cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/cordinations_utils.c -o keys_cordinations/cordinations_utils.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/parsing.c -o parsing/parsing.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/read_map.c -o parsing/read_map.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/parsing_utils.c -o parsing/parsing_utils.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/parse_line.c -o parsing/parse_line.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/parse_color.c -o parsing/parse_color.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/map_checker.c -o parsing/map_checker.o
+cc -Wall -Wextra -Werror -Imlx -c parsing/map_checker_utils.c -o parsing/map_checker_utils.o
+/Library/Developer/CommandLineTools/usr/bin/make -C ./parsing/libft
+make[1]: Entering directory `/Users/aaitoual/Desktop/push/mandatory/parsing/libft'
+gcc -Wall -Wextra -Werror -c ft_memset.c
+gcc -Wall -Wextra -Werror -c ft_memcpy.c
+gcc -Wall -Wextra -Werror -c ft_memmove.c
+gcc -Wall -Wextra -Werror -c ft_memchr.c
+gcc -Wall -Wextra -Werror -c ft_calloc.c
+gcc -Wall -Wextra -Werror -c ft_memcmp.c
+gcc -Wall -Wextra -Werror -c ft_bzero.c
+gcc -Wall -Wextra -Werror -c ft_strlen.c
+gcc -Wall -Wextra -Werror -c ft_strlcpy.c
+gcc -Wall -Wextra -Werror -c ft_strlcat.c
+gcc -Wall -Wextra -Werror -c ft_strdup.c
+gcc -Wall -Wextra -Werror -c ft_strchr.c
+gcc -Wall -Wextra -Werror -c ft_strrchr.c
+gcc -Wall -Wextra -Werror -c ft_strnstr.c
+gcc -Wall -Wextra -Werror -c ft_strncmp.c
+gcc -Wall -Wextra -Werror -c ft_atoi.c
+gcc -Wall -Wextra -Werror -c ft_isalpha.c
+gcc -Wall -Wextra -Werror -c ft_isdigit.c
+gcc -Wall -Wextra -Werror -c ft_isalnum.c
+gcc -Wall -Wextra -Werror -c ft_isascii.c
+gcc -Wall -Wextra -Werror -c ft_isprint.c
+gcc -Wall -Wextra -Werror -c ft_toupper.c
+gcc -Wall -Wextra -Werror -c ft_tolower.c
+gcc -Wall -Wextra -Werror -c ft_substr.c
+gcc -Wall -Wextra -Werror -c ft_strjoin.c
+gcc -Wall -Wextra -Werror -c ft_strtrim.c
+gcc -Wall -Wextra -Werror -c ft_itoa.c
+gcc -Wall -Wextra -Werror -c ft_strmapi.c
+gcc -Wall -Wextra -Werror -c ft_putchar_fd.c
+gcc -Wall -Wextra -Werror -c ft_putstr_fd.c
+gcc -Wall -Wextra -Werror -c ft_putendl_fd.c
+gcc -Wall -Wextra -Werror -c ft_putnbr_fd.c
+gcc -Wall -Wextra -Werror -c ft_split.c
+gcc -Wall -Wextra -Werror -c ft_striteri.c
+ar -rc libft.a ft_memset.o ft_memcpy.o ft_memmove.o ft_memchr.o ft_calloc.o ft_memcmp.o ft_bzero.o ft_strlen.o ft_strlcpy.o ft_strlcat.o ft_strdup.o ft_strchr.o ft_strrchr.o ft_strnstr.o ft_strncmp.o ft_atoi.o ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_itoa.o ft_strmapi.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_split.o ft_striteri.o
+make[1]: Leaving directory `/Users/aaitoual/Desktop/push/mandatory/parsing/libft'
+cc cub3D.o ./keys_cordinations/cordinations.o ./keys_cordinations/key_press_release.o ./keys_cordinations/player_first_cordinations.o ./texturse_reader/get_texturse_buff.o ./texturse_reader/get_texturse_buff_utils.o ./draw/draw.o ./minimap/minimap.o ./imgs/creat_imgs.o ./draw/cast_rays.o ./draw/rander_wall.o ./draw/cast_rays_utils1.o ./draw/cast_rays_utils2.o ./keys_cordinations/cordinations_utils.o ./parsing/parsing.o ./parsing/read_map.o ./parsing/parsing_utils.o ./parsing/parse_line.o ./parsing/parse_color.o ./parsing/map_checker.o ./parsing/map_checker_utils.o -lmlx -framework OpenGL -framework AppKit -o cub3d -lft -L./parsing/libft
+make: Leaving directory `/Users/aaitoual/Desktop/push/mandatory'
+ 

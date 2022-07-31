@@ -25,6 +25,10 @@ data	*parsing(char *file_name)
 		print_error(errno);
 	}
 	map = read_map(fd);
+	i = -1;
+	while (map[++i])
+		printf ("%s\n", map[i]);
+	puts ("yooo");
 	i = 0;
 	while (map[i][0] != ' ' && map[i][0] != '1')
 		parse_line(map[i++], d, map);
