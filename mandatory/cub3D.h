@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:46:17 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 17:33:45 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/01 18:45:52 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ typedef struct s_info
 	float			pa;
 	float			px;
 	float			py;
+	t_img			hand;
 	t_img			mini_map;
 	t_img			img_u;
 	t_img			img_tmp;
@@ -111,7 +112,6 @@ typedef struct s_info
 	void			*ml;
 	void			*window;
 	void			*window2;
-	char			**m_info;
 	int				*buff_no;
 	int				*buff_so;
 	int				*buff_we;

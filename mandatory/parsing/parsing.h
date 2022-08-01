@@ -21,14 +21,14 @@ typedef struct
 
 
 char			**read_map(int fd);
-data			*parsing(char *file_name, data *d);
+data			parsing(char *file_name);
 void			print_error(int error);
 int				is_map(char *str);
 void			parse_line(char *line, data *d, char **map);
 int				arrlen(char **arr);
 unsigned long	color_parse(char *str, data *d, char **map);
 unsigned long	rgb_to_hexa(int r, int g, int b);
-char			**map_checker(char **map, data *d, char **file);
+char			**map_checker(char **map, data *d, char **file, int t);
 int				is_meta(char c);
 int				check_map_characters(char **map);
 void			free_arr(char **arr);

@@ -12,6 +12,7 @@ void	parse_line(char *line, data *d, char **map)
 {
 	static int	i;
 
+	printf ("--%s\n", line);
 	if (!strncmp(line, "NO ", 3) && ++i)
 		d->n_path = rm_spaces(line, 3);
 	else if (!strncmp(line, "SO ", 3) && ++i)

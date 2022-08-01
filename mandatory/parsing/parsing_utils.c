@@ -58,7 +58,6 @@ void	free_arr(char **arr)
 		while (arr[i])
 		{
 			free(arr[i]);
-			arr[i] = 0;
 			i++;
 		}
 	free(arr);
@@ -78,6 +77,4 @@ void	free_data(data *d)
 	d->e_path = 0;
 	d->w_path = 0;
 	d->s_path = 0;
-	free_arr(d->map);
-	free(d);
 }

@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:45:34 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 17:31:56 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:11:56 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,6 @@ void	creat_the_game(t_info *info)
 	mlx_loop(info->ml);
 }
 
-char	*cpy(char *dest, char *src)
-{
-	int		i;
-	char	*tmp;
-
-	(void)dest;
-	tmp = malloc (sizeof (char) * (ft_strlen(src) + 2));
-	i = -1;
-	while (src[++i])
-		tmp[i] = src[i];
-	tmp[i] = '\0';
-	return (tmp);
-}
-
 void	get_default(t_info *info)
 {
 	int	i;
@@ -92,50 +78,16 @@ void	get_default(t_info *info)
 	info->up.k_w = 0;
 }
 
-char	**cpy_2(char **str, int j)
-{
-	int		i;
-	int		k;
-	char	**ret;
-
-	i = -1;
-	while (str[++i])
-		i = i + 1 - 1;
-	ret = malloc (sizeof (char *) * (i + 1));
-	i = j - 2;
-	k = -1;
-	while (str[++i])
-	{
-		k++;
-		ret[k] = cpy(ret[k], str[i]);
-	}
-	ret[k + 1] = NULL;
-	return (ret);
-}
-
-// void    free_stack(data *d)
-// {
-//     free(d->n_path);
-//     free(d->s_path);
-//     free(d->e_path);
-//     free(d->w_path);
-//     free_arr(d->map);
-//     free(d);
-// }
-
 int	main(int ac, char **av)
 {
 	t_info	info;
-	int	i = -1;
 
 	if (ac != 2)
 	{
 		printf ("error\n");
 		exit (1);
 	}
-	info.k = *parsing(av[1], &info.k);
-	while (info.k.map[++i])
-		printf ("%s\n", info.k.map[i]);
+	info.k = parsing(av[1]);
 	get_default(&info);
 	creat_the_game(&info);
 	return (0);

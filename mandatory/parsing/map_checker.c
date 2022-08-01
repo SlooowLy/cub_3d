@@ -8,12 +8,12 @@ int	is_meta(char c)
 	return (0);
 }
 
-int	check_sub_lines(char **s)
+int	check_sub_lines(char **s, int t)
 {
 	int	last;
 	int	i;
 
-	i = 0;
+	i = t - t;
 	while (s[0][i])
 		if (is_meta(s[0][i++]))
 			return (1);
@@ -32,12 +32,12 @@ int	check_sub_lines(char **s)
 	return (0);
 }
 
-int	check_lines(char **s)
+int	check_lines(char **s, int t)
 {
 	int	i;
 	int	j;
 
-	i = 0;
+	i = t - t;
 	while (s[i + 1])
 	{
 		j = 0;
@@ -50,7 +50,9 @@ int	check_lines(char **s)
 					|| s[i + 1][j] == ' ' || s[i + 1][j - 1] == ' '
 					|| s[i][j - 1] == ' ' || s[i - 1][j - 1] == ' '
 					|| !s[i - 1][j + 1] || !s[i + 1][j + 1])
+					{
 						return 1;
+					}
 			}
 			j++;
 		}
@@ -77,11 +79,11 @@ char	**allocate_map(char **map)
 	return (map2);
 }
 
-char	**map_checker(char **map, data *d, char **file)
+char	**map_checker(char **map, data *d, char **file, int i)
 {
 	if (!(*map))
 		return (0);
-	if (check_lines(map) || check_sub_lines(map))
+	if (check_lines(map, i) || check_sub_lines(map, i))
 	{
 		free_arr(file);
 		free_data(d);

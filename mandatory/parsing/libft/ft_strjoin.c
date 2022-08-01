@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:27:05 by mbenkhat          #+#    #+#             */
-/*   Updated: 2022/07/31 15:02:54 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/07/31 18:46:50 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	join(char *result, char *s1, char *s2)
 		i++;
 		j++;
 	}
-	result[i] = 0;
+	result[i] = '\0';
 }
 
 char	*ft_strjoin(char const *s1, char const *s2)

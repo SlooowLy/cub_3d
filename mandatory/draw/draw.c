@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 09:17:53 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 09:05:21 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/01 17:12:21 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	draw(void *stru)
 	mlx_put_image_to_window(info->ml, info->window, info->img_d.img, 0, 240);
 	rays(info);
 	rander_walls(info);
+	mlx_put_image_to_window(info->ml, info->window, info->hand.img, 150, 150);
 	return (0);
 }

@@ -38,8 +38,12 @@ char **split_map(char *str)
 		y = 0;
 		splited[x] = malloc(split_len(str+i) + 1);
 		while (str[i] != '\n' && str[i])
-			splited[x][y++] = str[i++];
-		splited[x][y] = 0;
+		{
+			splited[x][y] = str[i];
+			i++;
+			y++;
+		}
+		splited[x][y] = '\0';
 		x++;
 		if (str[i])
 			i++;
@@ -50,16 +54,15 @@ char **split_map(char *str)
 
 char	**read_map(int fd)
 {
-	char	*buff;
+	char	buff[2];
 	char	*file;
 	char	**map;
 	int		i;
 
 	file = malloc(1);
-	buff = malloc(2);
-	if (!file || !buff)
+	if (!file)
 		return (0);
-	file[0] = '\0';
+	file[0] = 0;
 	i = read(fd, buff, 1);
 	while (i == 1)
 	{
