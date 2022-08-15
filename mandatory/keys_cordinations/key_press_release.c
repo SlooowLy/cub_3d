@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:13:35 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/01 18:30:13 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/15 20:30:32 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,16 @@ void	ft_exit(t_info *info, int i)
 
 int	key_press(int key, t_info *info)
 {
+	int	x;
+	int	y;
+	
+	x = floor(info->px / 64);
+	y = floor(info->py / 64);
+	if (key == KEY_ENT)
+	{
+		if ((info->k.map[y][x + 1] == 'D' || info->k.map[y][x - 1] == 'D') && !info->animation)
+			info->animation = 4;
+	}
 	if (key == KEY_W)
 		info->up.k_w = 1;
 	if (key == KEY_S)

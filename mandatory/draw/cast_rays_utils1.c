@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:24:44 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 17:28:07 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/15 15:33:32 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ double	check_vertical(t_info *m, int i, float rayangel, float ystep)
 		ystep *= -1;
 	if (m->rays[i].rayisleft)
 		vx_chk--;
-	while (!is_wall(m, vx_chk, vy_chk, '1'))
+	while (!is_wall(m, vx_chk, vy_chk, '1') && !is_wall(m, vx_chk, vy_chk, 'D'))
 	{
 		vx_chk += xstep;
 		vy_chk += ystep;

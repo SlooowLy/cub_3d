@@ -6,14 +6,58 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:22:19 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 12:04:32 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/15 20:55:53 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
+int	check_door(t_info *m, int i, int *ix)
+{
+	int			x;
+	int			y;
+	static int	k;
+	static int	r = 1;
+	static int	time;
+
+	x = m->rays[i / 3].w_x / 64;
+	y = m->rays[i / 3].w_y / 64;
+	if (++time >= 100000)
+		time = 0;
+	if (k == 3 && m->animation && r == 1)
+	{
+		k++;
+		r *= -1;
+	}
+	else if (k == 0 && m->animation && r == -1)
+	{
+		k--;
+		r *= -1;
+	}
+	if (m->k.map[y][x] == 'D' && m->rays[i / 3].washitvertical)
+	{
+		*ix = (int)((m->rays[i / 3].w_y) % WALL_SIZE);
+		while (!(time % 10000) && m->animation)
+			time++;
+		if (m->animation)
+			k += r;
+	if ((k == 0 && r == -1) || (k == 3 && r == 1))
+		m->animation = 0;
+		return (k);
+	}
+	return (-1);
+}
+
 int	*get_texturse_info(t_info *m, int i, int *ix)
 {
+	int	tmp;
+	
+	tmp = check_door(m, i, ix);
+	if (tmp != -1)
+	{
+		printf ("%d\n", tmp);
+		return (m->buff_door[tmp]);
+	}
 	if (!m->rays[i / 3].washitvertical)
 	{
 		*ix = (int)((m->rays[i / 3].w_x) % WALL_SIZE);
@@ -90,11 +134,15 @@ void	put_wall(t_info *m, int wall_h, int i, int y)
 void	rander_walls(t_info *info)
 {
 	int			i;
+	int			k;
 	float		projection_distance;
 	float		wall_height;
 	float		dis;
 
 	projection_distance = (852 / 2) / tan(60 / 2);
+	k = 1;
+	if (info->animation)
+		k = 4;
 	i = 0;
 	while (i < 320)
 	{

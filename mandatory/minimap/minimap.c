@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 15:20:53 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 17:28:41 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:13:58 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ int	get_color_map(t_info *info, int i, int j)
 		return (0x0FFFFFF);
 	if (info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == '1')
 		return (0x0FF00FF);
+	if (info->k.map[(int)floor(i / 17)][(int)floor(j / 17)] == 'D')
+		return (0x0008080);
 	return (0x0FF00FF);
 }
 

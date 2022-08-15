@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:47:24 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 17:55:16 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:53:37 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ unsigned int	get_color(t_img img, int x, int y)
 	ptr = img.addr + pixel;
 	return ((((unsigned char)ptr[2]) << 16)
 		+ (((unsigned char)ptr[1]) << 8) + ((unsigned char)ptr[0]));
+}
+
+void	get_door(t_info *info)
+{
+	get_door_texture1(info);
+	get_door_texture2(info);
+	get_door_texture3(info);
+	get_door_texture4(info);
 }
 
 void	get_texture_buff(t_info *info)
@@ -49,4 +57,5 @@ void	get_texture_buff(t_info *info)
 	get_no_texture(info);
 	get_we_texture(info);
 	get_so_texture(info);
+	get_door(info);
 }

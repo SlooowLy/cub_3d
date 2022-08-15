@@ -9,6 +9,7 @@ gcc -Wall -Wextra -Werror -c parse_color.c
 gcc -Wall -Wextra -Werror -c map_checker.c
 gcc -Wall -Wextra -Werror -c map_checker_utils.c
 /Library/Developer/CommandLineTools/usr/bin/make -C ./libft
+ 
 make[1]: Entering directory `/Users/aaitoual/Desktop/push/parsing/libft'
 gcc -Wall -Wextra -Werror -c ft_memset.c
 gcc -Wall -Wextra -Werror -c ft_memcpy.c

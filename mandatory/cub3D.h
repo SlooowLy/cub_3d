@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:46:17 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/01 18:45:52 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/15 17:35:55 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,13 @@
 # include <string.h>
 # include <math.h>
 
+# define DOOR_TEXTURE1 "./texturse/door1.xpm"
+# define DOOR_TEXTURE2 "./texturse/door2.xpm"
+# define DOOR_TEXTURE3 "./texturse/door3.xpm"
+# define DOOR_TEXTURE4 "./texturse/door4.xpm"
 # define WINDOW_H 480
 # define WINDOW_W 852
+# define KEY_ENT 36
 # define EXIT 53
 # define KEY_A 0
 # define KEY_M 46
@@ -92,6 +97,7 @@ typedef struct s_cast
 
 typedef struct s_info
 {
+	int				animation;
 	data			k;
 	int				window_h;
 	int				window_w;
@@ -112,12 +118,17 @@ typedef struct s_info
 	void			*ml;
 	void			*window;
 	void			*window2;
+	int				**buff_door;
 	int				*buff_no;
 	int				*buff_so;
 	int				*buff_we;
 	int				*buff_ea;
 }			t_info;
 
+void			get_door_texture1(t_info *info);
+void			get_door_texture2(t_info *info);
+void			get_door_texture3(t_info *info);
+void			get_door_texture4(t_info *info);
 int				mouse_move(int x, int y, t_info *param);
 int				check_wall(t_info *info, int x, int y);
 void			rays(t_info *m);
