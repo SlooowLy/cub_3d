@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:46:17 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/15 17:35:55 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/16 17:10:46 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ typedef struct s_cast
 
 typedef struct s_info
 {
+	int				door_statue;
 	int				animation;
 	data			k;
 	int				window_h;
@@ -125,6 +126,7 @@ typedef struct s_info
 	int				*buff_ea;
 }			t_info;
 
+int				check_door2(t_info *info, int x, int y);
 void			get_door_texture1(t_info *info);
 void			get_door_texture2(t_info *info);
 void			get_door_texture3(t_info *info);

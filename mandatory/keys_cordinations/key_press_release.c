@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:13:35 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/15 20:30:32 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/16 16:57:17 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ int	key_press(int key, t_info *info)
 	if (key == KEY_ENT)
 	{
 		if ((info->k.map[y][x + 1] == 'D' || info->k.map[y][x - 1] == 'D') && !info->animation)
+		{
+			info->door_statue *= -1;
 			info->animation = 4;
+		}
 	}
 	if (key == KEY_W)
 		info->up.k_w = 1;

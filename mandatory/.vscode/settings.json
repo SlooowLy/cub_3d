@@ -3,6 +3,7 @@
         "parsing.h": "c",
         "chrono": "c",
         "libft.h": "c",
-        "locale": "c"
+        "locale": "c",
+        "cub3d.h": "c"
     }
 }

@@ -6,7 +6,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 # GNU Make 3.81
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
@@ -14,8 +13,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 
-# Make data base, printed on Sun Aug 14 22:02:48 2022
+# Make data base, printed on Tue Aug 16 15:11:29 2022
 
 # Variables
 
@@ -23,8 +23,6 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -50,11 +48,11 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 41)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-03078424-4445-427c-81a2-57edb56743cc.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-1716b7c5-86c1-4222-8553-106e7137aeb7.sock
 # environment
-VSCODE_CWD = /Users/aaitoual/Desktop/push/mandatory
+VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.T5ZshzpWgu/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.0RZ8esmiM5/Render
 # environment
 PATH = /Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/goinfre/aaitoual/.brew/opt/readline/bin:/Users/aaitoual/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/aaitoual/.fig/bin
 # environment
@@ -70,7 +68,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.5Szw8LtZV9/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4xtc3p52K5/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -88,8 +86,6 @@ HOME = /Users/aaitoual
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CLI = 1
-# environment
 VSCODE_CODE_CACHE_PATH = /Users/aaitoual/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
 # environment
 LOGNAME = aaitoual
@@ -103,16 +99,12 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-LC_TERMINAL = iTerm2
-# environment
 HOMEBREW_CACHE = /tmp/aaitoual/Homebrew/Caches
 # environment
-SHLVL = 3
+SHLVL = 1
 # makefile (from `Makefile', line 1)
 CC = gcc
 # default
@@ -121,8 +113,6 @@ MAKE_VERSION := 3.81
 USER = aaitoual
 # makefile
 .DEFAULT_GOAL := all
-# environment
-TERM_SESSION_ID = w0t0p0:BF3A8A80-55D0-4D32-B3CD-37189BF44C21
 # makefile (from `Makefile', line 57)
 NAME = libft.a
 # environment
@@ -131,8 +121,6 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -148,19 +136,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.13
-# environment
-XPC_SERVICE_NAME = 0
-# environment
-LC_TERMINAL_VERSION = 3.4.13
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:BF3A8A80-55D0-4D32-B3CD-37189BF44C21
-# environment
-COLORFGBG = 7;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x18D46:0x0:0x0
 # environment
@@ -171,8 +151,6 @@ MAKEFILES :=
 HOMEBREW_NO_AUTO_UPDATE = 1
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
 # environment
 PAGER = less
 # environment
@@ -194,11 +172,9 @@ MAKELEVEL := 1
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 2090
+VSCODE_PID = 75248
 # variable set hash-table stats:
-# Load=89/1024=9%, Rehash=0, Collisions=9/122=7%
+# Load=77/1024=8%, Rehash=0, Collisions=8/110=7%
 
 # Pattern-specific Variable Values
 
@@ -295,7 +271,6 @@ ft_strdup.c:
 #  Implicit rule search has been done.
 #  Last modified 2022-07-31 12:15:10
 #  File has been updated.
- 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -321,6 +296,7 @@ ft_strlen.o: ft_strlen.c libft.h
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 65):
+ 
 	@$(CC) $(FLAGS) -c $<
 	
 
@@ -573,7 +549,6 @@ ft_striteri.o: ft_striteri.c libft.h
 #  Implicit/static pattern stem: `ft_striteri'
 #  Last modified 2022-08-14 20:20:40
 #  File has been updated.
- 
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
@@ -603,6 +578,7 @@ ft_memcpy.c:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
+ 
 ft_lstnew.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -872,7 +848,6 @@ ft_lstadd_front.o:
 #  File has not been updated.
 
 ft_isascii.o: ft_isascii.c libft.h
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `ft_isascii'
 #  Last modified 2022-08-14 20:20:39
@@ -900,6 +875,7 @@ ft_strdup.o: ft_strdup.c libft.h
 ft_lstdelone.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
@@ -1083,10 +1059,10 @@ ft_putendl_fd.o: ft_putendl_fd.c libft.h
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Aug 14 22:02:48 2022
+# Finished Make data base on Tue Aug 16 15:11:29 2022
 
 
-# Make data base, printed on Sun Aug 14 22:02:48 2022
+# Make data base, printed on Tue Aug 16 15:11:29 2022
 
 # Variables
 
@@ -1094,12 +1070,10 @@ ft_putendl_fd.o: ft_putendl_fd.c libft.h
 <D = $(patsubst %/,%,$(dir $<))
 # automatic
 ?F = $(notdir $?)
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# makefile (from `Makefile', line 12)
+# makefile (from `Makefile', line 13)
 OBJ = $(SRC:.c=.o)
 # makefile (from `Makefile', line 7)
-SRC = cub3D.c ./keys_cordinations/cordinations.c ./keys_cordinations/key_press_release.c ./keys_cordinations/player_first_cordinations.c ./texturse_reader/get_texturse_buff.c ./texturse_reader/get_texturse_buff_utils.c ./draw/draw.c ./minimap/minimap.c ./imgs/creat_imgs.c ./draw/cast_rays.c ./draw/rander_wall.c ./draw/cast_rays_utils1.c ./draw/cast_rays_utils2.c ./keys_cordinations/cordinations_utils.c ./parsing/parsing.c ./parsing/read_map.c ./parsing/parsing_utils.c ./parsing/parse_line.c ./parsing/parse_color.c ./parsing/map_checker.c ./parsing/map_checker_utils.c 
+SRC = cub3D.c ./keys_cordinations/cordinations.c ./keys_cordinations/key_press_release.c ./keys_cordinations/player_first_cordinations.c ./texturse_reader/get_texturse_buff.c ./texturse_reader/get_texturse_buff_utils.c ./draw/draw.c ./minimap/minimap.c ./imgs/creat_imgs.c ./draw/cast_rays.c ./draw/rander_wall.c ./draw/cast_rays_utils1.c ./draw/cast_rays_utils2.c ./keys_cordinations/cordinations_utils.c ./parsing/parsing.c ./parsing/read_map.c ./parsing/parsing_utils.c ./parsing/parse_line.c ./parsing/parse_color.c ./parsing/map_checker.c ./parsing/map_checker_utils.c ./texturse_reader/get_texturse_door.c 
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -1123,13 +1097,12 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-03078424-4445-427c-81a2-57edb56743cc.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-1716b7c5-86c1-4222-8553-106e7137aeb7.sock
 # environment
-VSCODE_CWD = /Users/aaitoual/Desktop/push/mandatory
+VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.T5ZshzpWgu/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.0RZ8esmiM5/Render
 # environment
- 
 PATH = /Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/goinfre/aaitoual/.brew/opt/readline/bin:/Users/aaitoual/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/aaitoual/.fig/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
@@ -1140,7 +1113,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.5Szw8LtZV9/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4xtc3p52K5/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -1156,9 +1129,8 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/aaitoual
 # default
+ 
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
-# environment
-VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/aaitoual/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
 # environment
@@ -1173,16 +1145,14 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# environment
-LC_TERMINAL = iTerm2
+# default
+MAKECMDGOALS := all
 # environment
 HOMEBREW_CACHE = /tmp/aaitoual/Homebrew/Caches
 # environment
-SHLVL = 3
+SHLVL = 1
 # makefile (from `Makefile', line 3)
 LIBFT = ./libft/libft.a
 # default
@@ -1191,10 +1161,6 @@ MAKE_VERSION := 3.81
 USER = aaitoual
 # makefile
 .DEFAULT_GOAL := all
-# default
-MAKECMDGOALS := all
-# environment
-TERM_SESSION_ID = w0t0p0:BF3A8A80-55D0-4D32-B3CD-37189BF44C21
 # makefile (from `Makefile', line 1)
 NAME = cub3d
 # environment
@@ -1203,8 +1169,6 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
-# environment
-TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -1220,19 +1184,11 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-TERM_PROGRAM_VERSION = 3.4.13
-# environment
-XPC_SERVICE_NAME = 0
-# environment
-LC_TERMINAL_VERSION = 3.4.13
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
 +F = $(notdir $+)
-# environment
-ITERM_SESSION_ID = w0t0p0:BF3A8A80-55D0-4D32-B3CD-37189BF44C21
-# environment
-COLORFGBG = 7;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x18D46:0x0:0x0
 # environment
@@ -1243,8 +1199,6 @@ MAKEFILES :=
 HOMEBREW_NO_AUTO_UPDATE = 1
 # automatic
 <F = $(notdir $<)
-# environment
-ITERM_PROFILE = Default
 # environment
 PAGER = less
 # environment
@@ -1262,11 +1216,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 2090
+VSCODE_PID = 75248
 # variable set hash-table stats:
-# Load=87/1024=8%, Rehash=0, Collisions=7/127=6%
+# Load=75/1024=7%, Rehash=0, Collisions=4/115=3%
 
 # Pattern-specific Variable Values
 
@@ -1275,19 +1227,19 @@ VSCODE_PID = 2090
 # Directories
 
 # imgs (device 16777227, inode 5325507): 3 files, no impossibilities so far.
-# . (device 16777227, inode 5300156): 20 files, no impossibilities.
+# . (device 16777227, inode 5300156): 22 files, no impossibilities.
 # parsing (device 16777227, inode 5386554): 17 files, no impossibilities so far.
-# texturse_reader (device 16777227, inode 5310082): 5 files, no impossibilities so far.
+# texturse_reader (device 16777227, inode 5310082): 7 files, no impossibilities so far.
 # draw (device 16777227, inode 5311107): 11 files, no impossibilities so far.
 # minimap (device 16777227, inode 5324077): 3 files, no impossibilities so far.
 # keys_cordinations (device 16777227, inode 5303837): 9 files, no impossibilities so far.
 
-# 68 files, no impossibilities in 7 directories.
+# 72 files, no impossibilities in 7 directories.
 
 # Implicit Rules
 
 %.o: %.c cub3D.h
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1298,31 +1250,31 @@ VSCODE_PID = 2090
 draw/cast_rays.o: draw/cast_rays.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/cast_rays'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 parsing/map_checker_utils.o: parsing/map_checker_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/map_checker_utils'
-#  Last modified 2022-08-14 22:02:24
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 # Not a target:
 minimap/minimap.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:28:41
+#  Last modified 2022-08-15 16:13:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1331,12 +1283,12 @@ minimap/minimap.c:
 draw/cast_rays_utils2.o: draw/cast_rays_utils2.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/cast_rays_utils2'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1352,19 +1304,19 @@ all: cub3d
 parsing/parse_color.o: parsing/parse_color.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parse_color'
-#  Last modified 2022-08-14 22:02:24
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 # Not a target:
 texturse_reader/get_texturse_buff_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:24:51
+#  Last modified 2022-08-15 15:21:23
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1373,19 +1325,19 @@ texturse_reader/get_texturse_buff_utils.c:
 texturse_reader/get_texturse_buff.o: texturse_reader/get_texturse_buff.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `texturse_reader/get_texturse_buff'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
-cub3d: cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o cub3D.h libft/libft.a
+cub3d: cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o texturse_reader/get_texturse_door.o cub3D.h libft/libft.a
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `'
-#  Last modified 2022-08-14 22:02:24
+#  Last modified 2022-08-15 20:56:03
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -1395,52 +1347,52 @@ cub3d: cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_rele
 # automatic
 # * := 
 # automatic
- 
-# + := cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o cub3D.h libft/libft.a
+# + := cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o texturse_reader/get_texturse_door.o cub3D.h libft/libft.a
 # automatic
 # | := 
 # automatic
 # < := cub3D.o
 # automatic
-# ^ := cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o cub3D.h libft/libft.a
+# ^ := cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o texturse_reader/get_texturse_door.o cub3D.h libft/libft.a
 # automatic
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/18=17%
-#  commands to execute (from `Makefile', line 20):
+#  commands to execute (from `Makefile', line 21):
 	@$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) -lft -L./parsing/libft
 	
 
 # Not a target:
 draw/cast_rays_utils1.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:28:07
+#  Last modified 2022-08-15 15:33:32
 #  File has been updated.
 #  Successfully updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 cub3D.o: cub3D.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `cub3D'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 keys_cordinations/cordinations_utils.o: keys_cordinations/cordinations_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/cordinations_utils'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1453,19 +1405,19 @@ keys_cordinations/cordinations_utils.o: keys_cordinations/cordinations_utils.c c
 parsing/parsing_utils.o: parsing/parsing_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parsing_utils'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 # Not a target:
 keys_cordinations/key_press_release.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-01 18:30:13
+#  Last modified 2022-08-15 20:30:32
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1474,7 +1426,7 @@ keys_cordinations/key_press_release.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-01 16:39:44
+#  Last modified 2022-08-15 16:53:09
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1492,19 +1444,28 @@ keys_cordinations/player_first_cordinations.c:
 draw/draw.o: draw/draw.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/draw'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 # Not a target:
+texturse_reader/get_texturse_door.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-15 17:26:39
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
+# Not a target:
 draw/cast_rays.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-29 16:53:05
+#  Last modified 2022-08-15 15:33:23
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1513,24 +1474,24 @@ draw/cast_rays.c:
 parsing/parse_line.o: parsing/parse_line.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parse_line'
-#  Last modified 2022-08-14 22:02:24
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 parsing/map_checker.o: parsing/map_checker.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/map_checker'
-#  Last modified 2022-08-14 22:02:24
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1567,7 +1528,7 @@ libft/libft.a:
 # ? := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=2/12=17%
-#  commands to execute (from `Makefile', line 23):
+#  commands to execute (from `Makefile', line 24):
 	@$(MAKE) -C ./parsing/libft
 	
 
@@ -1575,19 +1536,19 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 29):
+#  commands to execute (from `Makefile', line 30):
 	@rm -rf $(NAME)
 	
 
 imgs/creat_imgs.o: imgs/creat_imgs.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `imgs/creat_imgs'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1603,7 +1564,7 @@ parsing/parse_color.c:
 # Not a target:
 texturse_reader/get_texturse_buff.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:55:16
+#  Last modified 2022-08-15 16:53:37
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1612,7 +1573,7 @@ texturse_reader/get_texturse_buff.c:
 # Not a target:
 cub3D.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-01 17:11:56
+#  Last modified 2022-08-15 17:30:33
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1627,12 +1588,12 @@ cub3D.c:
 draw/rander_wall.o: draw/rander_wall.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/rander_wall'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 20:56:03
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1648,25 +1609,24 @@ keys_cordinations/cordinations_utils.c:
 parsing/read_map.o: parsing/read_map.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/read_map'
-#  Last modified 2022-08-14 22:02:23
- 
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 keys_cordinations/cordinations.o: keys_cordinations/cordinations.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/cordinations'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1682,17 +1642,18 @@ parsing/parsing_utils.c:
 parsing/parsing.o: parsing/parsing.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parsing'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 re: fclean all
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -1709,14 +1670,14 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 26):
+#  commands to execute (from `Makefile', line 27):
 	@rm -rf $(OBJ)
 	
 
 # Not a target:
 cub3D.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-01 18:45:52
+#  Last modified 2022-08-15 17:35:55
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1725,19 +1686,19 @@ cub3D.h:
 minimap/minimap.o: minimap/minimap.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `minimap/minimap'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 # Not a target:
 parsing/parse_line.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 18:21:23
+#  Last modified 2022-08-15 15:16:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1746,7 +1707,7 @@ parsing/parse_line.c:
 # Not a target:
 parsing/map_checker.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-01 16:19:45
+#  Last modified 2022-08-15 15:16:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1755,12 +1716,12 @@ parsing/map_checker.c:
 texturse_reader/get_texturse_buff_utils.o: texturse_reader/get_texturse_buff_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `texturse_reader/get_texturse_buff_utils'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1776,12 +1737,12 @@ imgs/creat_imgs.c:
 draw/cast_rays_utils1.o: draw/cast_rays_utils1.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/cast_rays_utils1'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:58
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1797,19 +1758,19 @@ parsing/map_checker_utils.c:
 keys_cordinations/key_press_release.o: keys_cordinations/key_press_release.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/key_press_release'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 20:30:33
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
 # Not a target:
 draw/rander_wall.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 12:04:32
+#  Last modified 2022-08-15 20:55:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1818,12 +1779,12 @@ draw/rander_wall.c:
 keys_cordinations/player_first_cordinations.o: keys_cordinations/player_first_cordinations.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/player_first_cordinations'
-#  Last modified 2022-08-14 22:02:23
+#  Last modified 2022-08-15 17:35:57
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
-#  commands to execute (from `Makefile', line 15):
+#  commands to execute (from `Makefile', line 16):
 	@$(CC) $(CFLAGS) -c $< -o $@
 	
 
@@ -1854,8 +1815,20 @@ parsing/parsing.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+texturse_reader/get_texturse_door.o: texturse_reader/get_texturse_door.c cub3D.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `texturse_reader/get_texturse_door'
+#  Last modified 2022-08-15 17:35:58
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 16):
+	@$(CC) $(CFLAGS) -c $< -o $@
+	
+
 # files hash-table stats:
-# Load=52/1024=5%, Rehash=0, Collisions=4/199=2%
+# Load=54/1024=5%, Rehash=0, Collisions=4/207=2%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -1867,6 +1840,6 @@ parsing/parsing.c:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Sun Aug 14 22:02:48 2022
+# Finished Make data base on Tue Aug 16 15:11:29 2022
 
  

@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:45:34 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/15 17:30:33 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/16 16:57:55 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	get_default(t_info *info)
 				info->pa = 0;
 		}
 	}
+	info->door_statue = -1;
 	info->animation = 0;
 	info->rays = malloc (sizeof (t_calculations) * 320);
 	info->buff_door = malloc (sizeof (int *) * 4);
