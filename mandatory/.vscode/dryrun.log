@@ -1,8 +1,10 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/aaitoual/Desktop/push/mandatory'
+ 
 cc -Wall -Wextra -Werror -Imlx -c cub3D.c -o cub3D.o
 cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/cordinations.c -o keys_cordinations/cordinations.o
 cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/key_press_release.c -o keys_cordinations/key_press_release.o
+ 
 cc -Wall -Wextra -Werror -Imlx -c keys_cordinations/player_first_cordinations.c -o keys_cordinations/player_first_cordinations.o
 cc -Wall -Wextra -Werror -Imlx -c texturse_reader/get_texturse_buff.c -o texturse_reader/get_texturse_buff.o
 cc -Wall -Wextra -Werror -Imlx -c texturse_reader/get_texturse_buff_utils.c -o texturse_reader/get_texturse_buff_utils.o
@@ -23,6 +25,7 @@ cc -Wall -Wextra -Werror -Imlx -c parsing/map_checker.c -o parsing/map_checker.o
 cc -Wall -Wextra -Werror -Imlx -c parsing/map_checker_utils.c -o parsing/map_checker_utils.o
 cc -Wall -Wextra -Werror -Imlx -c texturse_reader/get_texturse_door.c -o texturse_reader/get_texturse_door.o
 /Library/Developer/CommandLineTools/usr/bin/make -C ./parsing/libft
+ 
 make[1]: Entering directory `/Users/aaitoual/Desktop/push/mandatory/parsing/libft'
 gcc -Wall -Wextra -Werror -c ft_memset.c
 gcc -Wall -Wextra -Werror -c ft_memcpy.c
@@ -30,10 +33,12 @@ gcc -Wall -Wextra -Werror -c ft_memmove.c
 gcc -Wall -Wextra -Werror -c ft_memchr.c
 gcc -Wall -Wextra -Werror -c ft_calloc.c
 gcc -Wall -Wextra -Werror -c ft_memcmp.c
+ 
 gcc -Wall -Wextra -Werror -c ft_bzero.c
 gcc -Wall -Wextra -Werror -c ft_strlen.c
 gcc -Wall -Wextra -Werror -c ft_strlcpy.c
 gcc -Wall -Wextra -Werror -c ft_strlcat.c
+ 
 gcc -Wall -Wextra -Werror -c ft_strdup.c
 gcc -Wall -Wextra -Werror -c ft_strchr.c
 gcc -Wall -Wextra -Werror -c ft_strrchr.c

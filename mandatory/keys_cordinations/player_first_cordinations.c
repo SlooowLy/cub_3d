@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:13:38 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/07/31 17:26:23 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/08/20 21:57:53 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	get_player_position(t_info *info)
 			if (info->k.map[i][j] == 'N' || info->k.map[i][j] == 'S'
 				|| info->k.map[i][j] == 'W' || info->k.map[i][j] == 'E')
 			{
-				info->px = j * WALL_SIZE;
-				info->py = i * WALL_SIZE;
+				info->px = j * WALL_SIZE + 32;
+				info->py = i * WALL_SIZE + 32;
 				return ;
 			}
 		}

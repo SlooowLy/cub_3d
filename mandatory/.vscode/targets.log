@@ -6,6 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
+ 
 # GNU Make 3.81
 # Copyright (C) 2006  Free Software Foundation, Inc.
 # This is free software; see the source for copying conditions.
@@ -13,9 +14,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # PARTICULAR PURPOSE.
 
 # This program built for i386-apple-darwin11.3.0
- 
 
-# Make data base, printed on Tue Aug 16 15:11:29 2022
+# Make data base, printed on Sun Aug 21 15:19:43 2022
 
 # Variables
 
@@ -48,11 +48,11 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from `Makefile', line 41)
 OBJS = $(SRCS:.c=.o)
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-1716b7c5-86c1-4222-8553-106e7137aeb7.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-1e80cb84-45e5-41d2-b19e-bfbb4a5e8ef2.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.0RZ8esmiM5/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BbHaPyV9f2/Render
 # environment
 PATH = /Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/goinfre/aaitoual/.brew/opt/readline/bin:/Users/aaitoual/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/aaitoual/.fig/bin
 # environment
@@ -68,7 +68,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4xtc3p52K5/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cUoNq9Eojo/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -136,7 +136,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000004.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -172,7 +172,7 @@ MAKELEVEL := 1
 # environment
 LANG = C
 # environment
-VSCODE_PID = 75248
+VSCODE_PID = 53664
 # variable set hash-table stats:
 # Load=77/1024=8%, Rehash=0, Collisions=8/110=7%
 
@@ -289,6 +289,7 @@ ft_memcmp.o: ft_memcmp.c libft.h
 
 ft_strlen.o: ft_strlen.c libft.h
 #  Implicit rule search has been done.
+ 
 #  Implicit/static pattern stem: `ft_strlen'
 #  Last modified 2022-08-14 20:20:39
 #  File has been updated.
@@ -296,7 +297,6 @@ ft_strlen.o: ft_strlen.c libft.h
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 65):
- 
 	@$(CC) $(FLAGS) -c $<
 	
 
@@ -568,6 +568,7 @@ ft_bzero.o: ft_bzero.c libft.h
 	@$(CC) $(FLAGS) -c $<
 	
 
+ 
 # Not a target:
 ft_memcpy.c:
 #  Implicit rule search has been done.
@@ -578,7 +579,6 @@ ft_memcpy.c:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
- 
 ft_lstnew.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -865,6 +865,7 @@ ft_strdup.o: ft_strdup.c libft.h
 #  Last modified 2022-08-14 20:20:39
 #  File has been updated.
 #  Successfully updated.
+ 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 #  commands to execute (from `Makefile', line 65):
@@ -875,7 +876,6 @@ ft_strdup.o: ft_strdup.c libft.h
 ft_lstdelone.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 # Not a target:
@@ -1059,10 +1059,10 @@ ft_putendl_fd.o: ft_putendl_fd.c libft.h
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Aug 16 15:11:29 2022
+# Finished Make data base on Sun Aug 21 15:19:43 2022
 
 
-# Make data base, printed on Tue Aug 16 15:11:29 2022
+# Make data base, printed on Sun Aug 21 15:19:43 2022
 
 # Variables
 
@@ -1097,11 +1097,11 @@ MAKEFILE_LIST :=  Makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-1716b7c5-86c1-4222-8553-106e7137aeb7.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/zz/zyxvpxvq6csfxvn_n000cd8r0033_6/T/vscode-ipc-1e80cb84-45e5-41d2-b19e-bfbb4a5e8ef2.sock
 # environment
 VSCODE_CWD = /
 # environment
-Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.0RZ8esmiM5/Render
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.BbHaPyV9f2/Render
 # environment
 PATH = /Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/Users/aaitoual/goinfre/homebrew/bin:/goinfre/aaitoual/.brew/opt/readline/bin:/Users/aaitoual/goinfre/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Users/aaitoual/.fig/bin
 # environment
@@ -1113,7 +1113,7 @@ ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.4xtc3p52K5/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.cUoNq9Eojo/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -1121,6 +1121,7 @@ HOMEBREW_TEMP = /tmp/aaitoual/Homebrew/Temp
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
+ 
 PWD = /Users/aaitoual/Desktop/push/mandatory
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
@@ -1129,7 +1130,6 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /Users/aaitoual
 # default
- 
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
 VSCODE_CODE_CACHE_PATH = /Users/aaitoual/Library/Application Support/Code/CachedData/57fd6d0195bb9b9d1b49f6da5db789060795de47
@@ -1184,7 +1184,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000004.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -1216,7 +1216,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 75248
+VSCODE_PID = 53664
 # variable set hash-table stats:
 # Load=75/1024=7%, Rehash=0, Collisions=4/115=3%
 
@@ -1227,14 +1227,14 @@ VSCODE_PID = 75248
 # Directories
 
 # imgs (device 16777227, inode 5325507): 3 files, no impossibilities so far.
-# . (device 16777227, inode 5300156): 22 files, no impossibilities.
+# . (device 16777227, inode 5300156): 21 files, no impossibilities.
 # parsing (device 16777227, inode 5386554): 17 files, no impossibilities so far.
 # texturse_reader (device 16777227, inode 5310082): 7 files, no impossibilities so far.
 # draw (device 16777227, inode 5311107): 11 files, no impossibilities so far.
 # minimap (device 16777227, inode 5324077): 3 files, no impossibilities so far.
 # keys_cordinations (device 16777227, inode 5303837): 9 files, no impossibilities so far.
 
-# 72 files, no impossibilities in 7 directories.
+# 71 files, no impossibilities in 7 directories.
 
 # Implicit Rules
 
@@ -1250,7 +1250,7 @@ VSCODE_PID = 75248
 draw/cast_rays.o: draw/cast_rays.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/cast_rays'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1262,7 +1262,7 @@ draw/cast_rays.o: draw/cast_rays.c cub3D.h
 parsing/map_checker_utils.o: parsing/map_checker_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/map_checker_utils'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1283,7 +1283,7 @@ minimap/minimap.c:
 draw/cast_rays_utils2.o: draw/cast_rays_utils2.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/cast_rays_utils2'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1304,7 +1304,7 @@ all: cub3d
 parsing/parse_color.o: parsing/parse_color.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parse_color'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1325,7 +1325,7 @@ texturse_reader/get_texturse_buff_utils.c:
 texturse_reader/get_texturse_buff.o: texturse_reader/get_texturse_buff.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `texturse_reader/get_texturse_buff'
-#  Last modified 2022-08-15 17:35:57
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1337,7 +1337,7 @@ texturse_reader/get_texturse_buff.o: texturse_reader/get_texturse_buff.c cub3D.h
 cub3d: cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_release.o keys_cordinations/player_first_cordinations.o texturse_reader/get_texturse_buff.o texturse_reader/get_texturse_buff_utils.o draw/draw.o minimap/minimap.o imgs/creat_imgs.o draw/cast_rays.o draw/rander_wall.o draw/cast_rays_utils1.o draw/cast_rays_utils2.o keys_cordinations/cordinations_utils.o parsing/parsing.o parsing/read_map.o parsing/parsing_utils.o parsing/parse_line.o parsing/parse_color.o parsing/map_checker.o parsing/map_checker_utils.o texturse_reader/get_texturse_door.o cub3D.h libft/libft.a
 #  Implicit rule search has not been done.
 #  Implicit/static pattern stem: `'
-#  Last modified 2022-08-15 20:56:03
+#  Last modified 2022-08-20 21:58:02
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -1359,6 +1359,7 @@ cub3d: cub3D.o keys_cordinations/cordinations.o keys_cordinations/key_press_rele
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/18=17%
 #  commands to execute (from `Makefile', line 21):
+ 
 	@$(CC) $(OBJ) -lmlx -framework OpenGL -framework AppKit -o $(NAME) -lft -L./parsing/libft
 	
 
@@ -1368,14 +1369,13 @@ draw/cast_rays_utils1.c:
 #  Last modified 2022-08-15 15:33:32
 #  File has been updated.
 #  Successfully updated.
- 
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 cub3D.o: cub3D.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `cub3D'
-#  Last modified 2022-08-15 17:35:57
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1387,7 +1387,7 @@ cub3D.o: cub3D.c cub3D.h
 keys_cordinations/cordinations_utils.o: keys_cordinations/cordinations_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/cordinations_utils'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1405,7 +1405,7 @@ keys_cordinations/cordinations_utils.o: keys_cordinations/cordinations_utils.c c
 parsing/parsing_utils.o: parsing/parsing_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parsing_utils'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1417,7 +1417,7 @@ parsing/parsing_utils.o: parsing/parsing_utils.c cub3D.h
 # Not a target:
 keys_cordinations/key_press_release.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 20:30:32
+#  Last modified 2022-08-16 16:57:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1435,7 +1435,7 @@ Makefile:
 # Not a target:
 keys_cordinations/player_first_cordinations.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:26:23
+#  Last modified 2022-08-20 21:57:53
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1444,7 +1444,7 @@ keys_cordinations/player_first_cordinations.c:
 draw/draw.o: draw/draw.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/draw'
-#  Last modified 2022-08-15 17:35:57
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1474,7 +1474,7 @@ draw/cast_rays.c:
 parsing/parse_line.o: parsing/parse_line.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parse_line'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1486,7 +1486,7 @@ parsing/parse_line.o: parsing/parse_line.c cub3D.h
 parsing/map_checker.o: parsing/map_checker.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/map_checker'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1543,7 +1543,7 @@ fclean: clean
 imgs/creat_imgs.o: imgs/creat_imgs.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `imgs/creat_imgs'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1573,7 +1573,7 @@ texturse_reader/get_texturse_buff.c:
 # Not a target:
 cub3D.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 17:30:33
+#  Last modified 2022-08-16 16:57:55
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1588,7 +1588,7 @@ cub3D.c:
 draw/rander_wall.o: draw/rander_wall.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/rander_wall'
-#  Last modified 2022-08-15 20:56:03
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1600,7 +1600,7 @@ draw/rander_wall.o: draw/rander_wall.c cub3D.h
 # Not a target:
 keys_cordinations/cordinations_utils.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-31 17:27:26
+#  Last modified 2022-08-16 17:53:25
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1609,7 +1609,7 @@ keys_cordinations/cordinations_utils.c:
 parsing/read_map.o: parsing/read_map.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/read_map'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1621,7 +1621,7 @@ parsing/read_map.o: parsing/read_map.c cub3D.h
 keys_cordinations/cordinations.o: keys_cordinations/cordinations.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/cordinations'
-#  Last modified 2022-08-15 17:35:57
+#  Last modified 2022-08-16 18:40:36
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1642,7 +1642,8 @@ parsing/parsing_utils.c:
 parsing/parsing.o: parsing/parsing.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `parsing/parsing'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
+ 
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1653,7 +1654,6 @@ parsing/parsing.o: parsing/parsing.c cub3D.h
 
 re: fclean all
 #  Implicit rule search has not been done.
- 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -1677,7 +1677,7 @@ clean:
 # Not a target:
 cub3D.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 17:35:55
+#  Last modified 2022-08-16 17:10:46
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1686,7 +1686,7 @@ cub3D.h:
 minimap/minimap.o: minimap/minimap.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `minimap/minimap'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1716,7 +1716,7 @@ parsing/map_checker.c:
 texturse_reader/get_texturse_buff_utils.o: texturse_reader/get_texturse_buff_utils.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `texturse_reader/get_texturse_buff_utils'
-#  Last modified 2022-08-15 17:35:57
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1737,7 +1737,7 @@ imgs/creat_imgs.c:
 draw/cast_rays_utils1.o: draw/cast_rays_utils1.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `draw/cast_rays_utils1'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1758,7 +1758,7 @@ parsing/map_checker_utils.c:
 keys_cordinations/key_press_release.o: keys_cordinations/key_press_release.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/key_press_release'
-#  Last modified 2022-08-15 20:30:33
+#  Last modified 2022-08-16 18:27:16
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1770,7 +1770,7 @@ keys_cordinations/key_press_release.o: keys_cordinations/key_press_release.c cub
 # Not a target:
 draw/rander_wall.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-15 20:55:53
+#  Last modified 2022-08-16 17:02:45
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1779,7 +1779,7 @@ draw/rander_wall.c:
 keys_cordinations/player_first_cordinations.o: keys_cordinations/player_first_cordinations.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `keys_cordinations/player_first_cordinations'
-#  Last modified 2022-08-15 17:35:57
+#  Last modified 2022-08-20 21:58:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1800,7 +1800,7 @@ parsing/read_map.c:
 # Not a target:
 keys_cordinations/cordinations.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-29 18:56:00
+#  Last modified 2022-08-16 18:40:24
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1818,7 +1818,7 @@ parsing/parsing.c:
 texturse_reader/get_texturse_door.o: texturse_reader/get_texturse_door.c cub3D.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `texturse_reader/get_texturse_door'
-#  Last modified 2022-08-15 17:35:58
+#  Last modified 2022-08-16 18:27:17
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -1840,6 +1840,6 @@ texturse_reader/get_texturse_door.o: texturse_reader/get_texturse_door.c cub3D.h
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Aug 16 15:11:29 2022
+# Finished Make data base on Sun Aug 21 15:19:43 2022
 
  

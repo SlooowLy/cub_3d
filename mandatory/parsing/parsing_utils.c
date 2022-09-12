@@ -15,6 +15,8 @@ void	print_error(int error)
 		printf("Unown map character!\n");
 	else if (error == 14)
 		printf("Map characters error!\n");
+	else if (error == 15)
+		printf("texturse error!\n");
 	else
 		printf("%s\n", strerror(error));
 	exit(1);

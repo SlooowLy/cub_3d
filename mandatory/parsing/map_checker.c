@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/12 17:03:37 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/09/12 17:03:38 by aaitoual         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
 
 int	is_meta(char c)
@@ -19,7 +31,10 @@ int	check_pr(char **s)
 		j = -1;
 		while(s[i][++j])
 		{
-			if (s[i][j] != '1' && s[i][j] != '0' && s[i][j] != 'N' && s[i][j] != 'W' && s[i][j] != 'E' && s[i][j] != 'S' && s[i][j] != 'D')
+			if (s[i][j] != '1' && s[i][j] != '0'
+				&& s[i][j] != 'N' && s[i][j] != 'W'
+				&& s[i][j] != 'E' && s[i][j] != 'S'
+				&& s[i][j] != 'D' && s[i][j] != ' ')
 				return (1);
 		}
 	}
@@ -42,6 +57,7 @@ int	check_sub_lines(char **s)
 		if (is_meta(s[i][0]) || is_meta(s[i++][last]))
 			return 1;
 	}
+
 	last = arrlen(s) - 1;
 	i = 0;
 	while (s[last][i])

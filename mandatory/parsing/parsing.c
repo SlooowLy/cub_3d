@@ -17,6 +17,19 @@ void	map_name(char *file)
 		print_error(10);
 }
 
+int	check_texturse(data d)
+{
+	if (access(d.e_path, F_OK | R_OK))
+		return (0);
+	if (access(d.s_path, F_OK | R_OK))
+		return (0);
+	if (access(d.n_path, F_OK | R_OK))
+		return (0);
+	if (access(d.w_path, F_OK | R_OK))
+		return (0);
+	return (1);
+}
+
 data	parsing(char *file_name)
 {
 	int		fd;
@@ -35,5 +48,10 @@ data	parsing(char *file_name)
 	d.map = map_checker(map + i, &d, map, i); 
 	free_arr(map);
 	close(fd);
+	if (!check_texturse(d))
+	{
+		free_data(&d);
+		print_error(15);
+	}
 	return (d);
 }
