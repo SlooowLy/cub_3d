@@ -1,9 +1,11 @@
 
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
+NO ./texturse/greystone.xpm
 
+SO ./texturse/wood.xpm
+
+WE ./texturse/redbrick.xpm
+
+EA ./texturse/bluestone.xpm
 
 C 225,30,0
 F 220,100,0

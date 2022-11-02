@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:22:19 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/16 17:02:45 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:32:42 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void	put_wall(t_info *m, int wall_h, int i, int y)
 	buffer = get_texturse_info(m, i, &ix);
 	while (++y != wall_h)
 	{
-		iy = (y) * ((WALL_SIZE / (float)wall_h));
+		iy = y * ((WALL_SIZE / (float)wall_h));
 		x = 0;
 		while (x != 3)
 		{
@@ -139,7 +139,7 @@ void	rander_walls(t_info *info)
 	float		wall_height;
 	float		dis;
 
-	projection_distance = (852 / 2) / tan(60 / 2);
+	projection_distance = (WINDOW_W / 2) / tan(60 / 2);
 	i = 0;
 	while (i < 320)
 	{

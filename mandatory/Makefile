@@ -25,9 +25,12 @@ $(LIBFT) :
 
 clean :
 	@rm -rf $(OBJ)
+	@$(MAKE) clean -C ./parsing/libft
+	
 
 fclean : clean
 	@rm -rf $(NAME)
+	@$(MAKE) fclean -C ./parsing/libft
 
 re : fclean all
 

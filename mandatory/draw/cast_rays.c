@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:23:47 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/15 15:33:23 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:14:21 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,14 @@ void	cast_ray(float rayangel, int i, t_info *m)
 	{
 		m->rays[i].w_x = m->cast.hx;
 		m->rays[i].w_y = m->cast.hy;
+		m->rays[i].distance = horz_dist;
 	}
 	else
 	{
 		m->rays[i].w_x = m->cast.vx;
 		m->rays[i].w_y = m->cast.vy;
-	}
-	if (horz_dist < vert_dist)
-		m->rays[i].distance = horz_dist;
-	else
 		m->rays[i].distance = vert_dist;
+	}
 	m->rays[i].washitvertical = (vert_dist < horz_dist);
 }
 

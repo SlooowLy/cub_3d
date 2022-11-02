@@ -6,7 +6,7 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/29 16:45:34 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/16 16:57:55 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/10/22 21:50:18 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	get_default(t_info *info)
 		while (info->k.map[i][++j])
 		{
 			if (info->k.map[i][j] == 'N')
-				info->pa = (3 * PI) / 2;
+				info->pa = (PI / 3) / 2;
 			if (info->k.map[i][j] == 'S')
 				info->pa = (PI) / 2;
 			if (info->k.map[i][j] == 'W')

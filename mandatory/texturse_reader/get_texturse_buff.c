@@ -6,21 +6,20 @@
 /*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 08:47:24 by aaitoual          #+#    #+#             */
-/*   Updated: 2022/08/15 16:53:37 by aaitoual         ###   ########.fr       */
+/*   Updated: 2022/10/30 18:27:06 by aaitoual         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-unsigned int	get_color(t_img img, int x, int y)
+unsigned int	get_color(t_img img, int y, int x)
 {
 	char	*ptr;
 	int		pixel;
 
-	pixel = y * img.line_length + x * 4;
+	pixel = x * img.line_length + y * 4;
 	ptr = img.addr + pixel;
-	return ((((unsigned char)ptr[2]) << 16)
-		+ (((unsigned char)ptr[1]) << 8) + ((unsigned char)ptr[0]));
+	return (*(unsigned int *) ptr);
 }
 
 void	get_door(t_info *info)
