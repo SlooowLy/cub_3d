@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_checker.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/03 16:02:57 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/11/03 16:17:47 by aaitoual         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
 
 int	is_meta(char c)
 {
 	if (c == '0' || c == 'N'
-		|| c == 'S' || c == 'E' || c == 'W')
+		|| c == 'S' || c == 'E' || c == 'W' || c == 'D')
 		return (1);
 	return (0);
 }
@@ -22,7 +34,7 @@ int	check_sub_lines(char **s)
 	{
 		last = ft_strlen(s[i]) - 1;
 		if (is_meta(s[i][0]) || is_meta(s[i++][last]))
-			return 1;
+			return (1);
 	}
 	last = arrlen(s) - 1;
 	i = 0;
@@ -50,7 +62,7 @@ int	check_lines(char **s)
 					|| s[i + 1][j] == ' ' || s[i + 1][j - 1] == ' '
 					|| s[i][j - 1] == ' ' || s[i - 1][j - 1] == ' '
 					|| !s[i - 1][j + 1] || !s[i + 1][j + 1])
-						return 1;
+					return (1);
 			}
 			j++;
 		}
@@ -77,7 +89,7 @@ char	**allocate_map(char **map)
 	return (map2);
 }
 
-char	**map_checker(char **map, data *d, char **file)
+char	**map_checker(char **map, t_data *d, char **file)
 {
 	if (!(*map))
 		return (0);
@@ -87,5 +99,5 @@ char	**map_checker(char **map, data *d, char **file)
 		free_data(d);
 		print_error(14);
 	}
-	return allocate_map(map);
+	return (allocate_map(map));
 }

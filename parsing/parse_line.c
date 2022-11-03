@@ -1,14 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_line.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/03 16:02:51 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/11/03 16:14:53 by aaitoual         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
+
+int	is_map(char *str)
+{
+	int	len;
+
+	if (!str)
+		return (1);
+	len = ft_strlen(str);
+	while (*str == '1' || *str == ' ')
+		str++;
+	if (!(*str) && len)
+		return (1);
+	return (0);
+}
 
 char	*rm_spaces(char *str, int n)
 {
 	char	*out;
 
 	out = ft_strdup(str + n);
-	return out;
+	return (out);
 }
 
-void	parse_line(char *line, data *d, char **map)
+void	parse_line(char *line, t_data *d, char **map)
 {
 	if (!strncmp(line, "NO ", 3) && !d->n_path)
 		d->n_path = rm_spaces(line, 3);

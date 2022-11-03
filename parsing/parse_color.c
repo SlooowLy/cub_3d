@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_color.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaitoual <aaitoual@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/03 16:02:54 by aaitoual          #+#    #+#             */
+/*   Updated: 2022/11/03 16:17:33 by aaitoual         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "parsing.h"
 
 int	ft_atoi2(char *str)
@@ -12,7 +24,7 @@ int	ft_atoi2(char *str)
 		out = out * 10 + (str[i] - 48);
 		i++;
 	}
-	if (!str[i] && i >= 1 && i <=3)
+	if (!str[i] && i >= 1 && i <= 3)
 		return (out);
 	return (-1);
 }
@@ -54,17 +66,17 @@ int	*parse_str_color(char *str)
 		i++;
 	}
 	free_arr(arr);
-	return out;
+	return (out);
 }
 
-unsigned long	color_parse(char *str, data *d, char **map)
+unsigned long	color_parse(char *str, t_data *d, char **map)
 {
 	int				*rgb;
 	int				i;
 	unsigned long	hexa;
 
 	rgb = parse_str_color(str);
-	if (!rgb || rgb[0] < 0 || rgb[0] > 255 
+	if (!rgb || rgb[0] < 0 || rgb[0] > 255
 		|| rgb[1] < 0 || rgb[1] > 255
 		|| rgb[2] < 0 || rgb[2] > 255)
 	{
